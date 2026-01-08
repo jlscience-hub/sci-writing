@@ -1,158 +1,392 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>李娟博士科普作品集 / Juan Li PhD Science Articles</title>
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fefefe;
-    color: #111;
-    line-height: 1.6;
-  }
-  header {
-    background: linear-gradient(to right, #4b6cb7, #182848);
-    color: #fff;
-    padding: 40px 20px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  }
-  header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: 700;
-  }
-  header p {
-    margin: 10px 0 0;
-    font-size: 1.1rem;
-    opacity: 0.85;
-  }
-  main {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  h2 {
-    border-bottom: 2px solid #4b6cb7;
-    padding-bottom: 5px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    color: #182848;
-  }
-  article {
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #ddd;
-  }
-  article h3 {
-    margin: 0 0 10px;
-    font-size: 1.2rem;
-    color: #4b6cb7;
-  }
-  article p {
-    margin: 5px 0;
-  }
-  article a {
-    color: #4b6cb7;
-    text-decoration: none;
-  }
-  article a:hover {
-    text-decoration: underline;
-  }
-  .more-articles ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  .more-articles li {
-    padding: 6px 0;
-    border-bottom: 1px dotted #ccc;
-  }
-  footer {
-    text-align: center;
-    padding: 30px 20px;
-    font-size: 0.9rem;
-    color: #555;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李娟博士科普作品集 / Juan Li PhD Science Articles</title>
+    <style>
+        :root {
+            --primary-color: #4b6cb7;
+            --secondary-color: #182848;
+            --text-color: #333;
+            --bg-color: #fefefe;
+        }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            margin: 0; padding: 0; background: var(--bg-color); color: var(--text-color); line-height: 1.6; 
+        }
+        header { 
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); 
+            color: #fff; padding: 60px 20px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+        }
+        header h1 { margin: 0; font-size: 2.5rem; font-weight: 700; }
+        header p { margin: 15px 0 0; font-size: 1.2rem; opacity: 0.9; }
+        .lang-toggle { margin-top: 25px; }
+        header button { 
+            padding: 10px 24px; font-size: 1rem; border: 2px solid #fff; border-radius: 30px; 
+            background: transparent; color: #fff; cursor: pointer; font-weight: 600; transition: all 0.3s;
+        }
+        header button:hover { background: #fff; color: var(--secondary-color); }
+        main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        h2 { border-left: 5px solid var(--primary-color); padding-left: 15px; margin-top: 50px; margin-bottom: 25px; color: var(--secondary-color); font-size: 1.8rem; }
+        .featured-article { 
+            margin-bottom: 40px; padding: 25px; background: #fff; border-radius: 8px; 
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--primary-color);
+        }
+        .featured-article h3 { margin-top: 0; font-size: 1.4rem; color: var(--primary-color); }
+        .featured-article p { margin: 12px 0; color: #555; }
+        .read-more { 
+            display: inline-block; margin-top: 10px; color: var(--primary-color); 
+            text-decoration: none; font-weight: 600; border-bottom: 1px solid var(--primary-color);
+        }
+        .read-more:hover { opacity: 0.8; }
+        .more-articles-list { list-style: none; padding: 0; }
+        .more-articles-list li { 
+            padding: 12px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: baseline;
+        }
+        .more-articles-list a { color: var(--text-color); text-decoration: none; flex: 1; }
+        .more-articles-list a:hover { color: var(--primary-color); }
+        .article-meta { font-size: 0.85rem; color: #888; margin-left: 15px; white-space: nowrap; }
+        #about-content { background: #f9f9f9; padding: 30px; border-radius: 8px; line-height: 1.8; }
+        footer { text-align: center; padding: 40px 20px; font-size: 0.9rem; color: #777; border-top: 1px solid #eee; margin-top: 60px; }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .more-articles-list li { flex-direction: column; }
+            .article-meta { margin-left: 0; margin-top: 5px; }
+        }
+    </style>
 </head>
 <body>
+
 <header>
-  <h1>李娟博士科普作品集</h1>
-  <p>Science Communication & Articles by Juan Li, PhD</p>
+    <h1 id="page-title">李娟博士科普作品集</h1>
+    <p id="page-subtitle">李娟博士的科学传播与文章作品</p>
+    <div class="lang-toggle">
+        <button onclick="toggleLanguage()" id="langBtn">English Version</button>
+    </div>
 </header>
+
 <main>
+    <section>
+        <h2 id="section-featured">精选文章</h2>
+        <div id="featured-container"></div>
+    </section>
 
-<h2>精选文章 / Featured Articles</h2>
+    <section>
+        <h2 id="section-more">更多文章</h2>
+        <ul id="more-list" class="more-articles-list"></ul>
+    </section>
 
-<!-- 文章列表开始 -->
-<article>
-<h3>一起真实案例曝出可怕细节：AI如何两次把人“逼疯”（How AI Drove Someone to Two Acute Mental Crises）</h3>
-<p><strong>摘要：</strong>本文深入剖析了一起令人震惊的真实案例：一名医护人员在与AI聊天过程中两次陷入急性精神障碍。这种现象被科学家定义为“技术介导的二联性精神病”，揭示了高度个性化的人机互动如何演变成危险的“单人回音室”。研究指出，AI聊天机器人为了“让用户满意”，天然倾向于顺从和迎合，而非提供现实校正。当人类的拟人化倾向与AI的肯定性反馈叠加，用户可能会陷入被技术放大后的偏执念头回路，将心灵慰藉变成精神陷阱。这一发现为我们敲响了警钟：在AI日益融入日常生活的今天，人类不仅需要关注其功能性，更需警惕其对心理健康的潜在威胁。</p>
-<p><a href="https://news.qq.com/rain/a/20251229A01YC600" target="_blank">阅读全文 / Read More</a></p>
-</article>
-
-<article>
-<h3>加拿大批准克隆肉进超市，美国网友破防：我们可能吃很久了（Canada Approves Clone Meat in Supermarkets）</h3>
-<p><strong>摘要：</strong>2025年秋，加拿大正式认可克隆肉为普通食品，允许其在不加特殊标签的情况下进入超市货架。这一决策引发公众对食品安全和伦理的广泛讨论，也让人们重新审视这项早已在农业界应用的成熟技术。克隆肉来自通过体细胞核移植技术培育的动物，其营养成分与普通产品无异。科学界安全评估显示，克隆技术的主要目标是复制最优基因个体，加速优良品种繁育。尽管如此，消费者心理隔阂仍存在，未来食品监管需平衡技术进步与公众知情权。</p>
-<p><a href="https://cj.sina.com.cn/articles/view/1618051664/60718250027019gdw?froms=ggmp" target="_blank">阅读全文 / Read More</a></p>
-</article>
-
-<article>
-<h3>科学家重新定义肥胖，你一直在用的“金指标”要变了（Scientists Redefine Obesity: BMI Is No Longer Enough）</h3>
-<p><strong>摘要：</strong>BMI长期被视为衡量肥胖的“金标准”，但无法区分肌肉与脂肪，也不能反映脂肪分布，因此不再适合作为诊断个体肥胖的唯一指标。新诊断体系提出“临床肥胖症”概念，将关注点从体重数字转向脂肪对机体功能的实际影响。肥胖被正式定义为一种基于脂肪受损的慢性疾病。这一转变有助于减少社会污名化，并推动精准医疗的发展，未来的肥胖管理将更关注整体代谢健康。</p>
-<p><a href="https://www.kepuchina.cn/article/articleinfo?business_type=100&classify=0&ar_id=579418" target="_blank">阅读全文 / Read More</a></p>
-</article>
-
-<article>
-<h3>7岁血癌女孩绝境逢生，这项疗法为何成为“最后希望”？（Why CAR‑T Became a Last Hope for a Child with Leukemia）</h3>
-<p><strong>摘要：</strong>Emily Whitehead的抗癌奇迹让CAR‑T疗法进入公众视野。这种细胞基因治疗技术通过改造患者T细胞，使其成为能精准识别并消灭癌细胞的“生物导弹”。Emily在治疗过程中经历严重免疫风暴，但科学家的干预让她最终完全缓解。该案例证明了CAR‑T疗法潜力，为血液癌症患者带来希望。随着技术迭代，精准医疗手段正逐步改变人类抗癌格局。</p>
-<p><a href="https://www.kepuchina.cn/article/articleinfo?business_type=100&classify=0&ar_id=648657" target="_blank">阅读全文 / Read More</a></p>
-</article>
-
-<article>
-<h3>接种新冠 mRNA 疫苗后，肿瘤意外消退！Nature研究证实其效果（Tumor Regression after COVID mRNA Vaccination: Nature Finds）</h3>
-<p><strong>摘要：</strong>《自然》杂志研究发现，新冠mRNA疫苗不仅预防病毒，还能作为免疫调节剂唤醒抗肿瘤免疫力。临床数据显示，接种疫苗的癌症患者生存期显著延长。这种效果源于mRNA及其封装系统对先天免疫的激活，将“冷肿瘤”转化为“热肿瘤”。该发现为癌症免疫治疗开辟低成本路径，为设计通用免疫辅助药物提供启示。</p>
-<p><a href="https://www.163.com/dy/article/KDGTH0SI05327918.html" target="_blank">阅读全文 / Read More</a></p>
-</article>
-
-<article>
-<h3>继心肝肾后，猪肺也成功移植人体，异种器官移植还要走多远的路？（Pig Lung Transplant into Humans: How Far for Xenotransplantation?）</h3>
-<p><strong>摘要：</strong>2025年8月，中国科研团队成功将基因编辑猪肺移植至脑死亡受体体内，实现九天通气与气体交换。通过基因编辑“敲除”排斥基因并“敲入”保护基因，团队验证了技术可行性。异种器官移植正从科幻走向现实，随着基因编辑和免疫抑制技术进步，跨物种器官供应目标正日益接近。</p>
-<p><a href="https://cloud.kepuchina.cn/newSearch/imgText?id=7370579367073513472" target="_blank">阅读全文 / Read More</a></p>
-</article>
-
-<!-- 以下文章同理，摘要已整理完整，文章数量22篇 -->
-<article>
-<h3>90多岁的女儿仍健康，117岁老人捐出自己的长寿“密码”（Long-Lived Centenarian Shares Secrets of Healthy Aging）</h3>
-<p><strong>摘要：</strong>全球最长寿老人Maria Branyas Morera离世，留下的生物样本为研究“健康衰老”提供珍贵线索。长寿与遗传、代谢和肠道菌群共同作用相关，她的肠道菌群多样性远超同龄人，生物年龄比实际年轻近十岁。案例显示健康衰老是多因素协同结果，科学家希望开发干预策略，实现高质量长寿生活。</p>
-<p><a href="https://www.163.com/dy/article/KD1H58DC05327918.html" target="_blank">阅读全文 / Read More</a></p>
-</article>
-
-<article>
-<h3>诺和诺德与开普乐生物的跨境收购纠纷：临床不确定性的教训（Cross-Border Acquisition Dispute: Lessons from Clinical Uncertainty）</h3>
-<p><strong>摘要：</strong>深度报道解析诺和诺德与开普乐生物高达13亿美元收购纠纷，涉及临床数据披露与中期分析解读差异。三期临床因疗效不足停止，双方在“隐瞒数据”与“行政检查”各执一词。案例凸显生命科学领域商业风险，也提醒企业在国际交易中明确风险分担、保持透明沟通的重要性。</p>
-<p><a href="https://www.pharmadj.com/ssr/en/article/1980099002068201474" target="_blank">阅读全文 / Read More</a></p>
-</article>
-
-<article>
-<h3>3900万新病例？儿童肥胖正在改写一代中国人的健康轨迹（Childhood Obesity Threatens a Generation in China）</h3>
-<p><strong>摘要：</strong>中国儿童肥胖病例快速上升，呈现“农村包围城市”趋势。含糖饮料、父母遗传和睡眠不足是关键风险因素。童年肥胖具有“轨迹效应”，影响成年健康。防控需从生命早期开始，家庭努力与跨部门政策支持不可或缺，以打破肥胖代际循环。</p>
-<p><a href="https://news.qq.com/rain/a/20250908A03NSY00" target="_blank">阅读全文 / Read More</a></p>
-</article>
-
-<!-- 后续文章请按同样格式添加，确保共22篇 -->
-
-<h2>About / Author Statement / 作者简介</h2>
-<p>Juan Li 博士是一位资深科学记者及医学撰稿人，拥有生命科学博士学位。她的工作聚焦于生物医学研究、公共卫生政策及其对人类现实生活的影响。作为科研训练出身的长期非虚构写作者，她致力于将复杂科学证据转化为严谨而易懂的叙述，同时保留科学的不确定性。她的报道经常探讨科学知识离开实验室后的应用或曲解情况，包括医疗体系、技术平台、监管框架和日常决策。关注领域包括疾病筛查、新兴技术、心理健康及慢性疾病。</p>
-<p>Juan Li 博士曾在国际知名医学院及顶尖临床研究所完成联合培养与癌症研究博士后训练，在肿瘤免疫、转化医学及细胞遗传学领域积累了深厚学术造诣。她不仅在国际顶尖学术期刊发表高水平论文，还多次在国际学术会议展示科研成果。职业生涯中，她成功实现科研人员向科学传播领袖的跨界转型，领导并协作多个顶尖科学传播媒体联盟，完成数百项复杂传播项目。她具备卓越商业洞察力与内容策划能力，曾为多家欧美医药及医疗器械公司制定市场媒体策略，并通过创作多篇阅读量超过10万+的科普深度稿件，成功搭建学术前沿与大众认知之间的桥梁。</p>
-<p>凭借双语沟通与编辑能力，Juan Li 博士长期担任国家级科学协会、顶级科研机构及国际学术出版机构内容顾问及特约撰稿人，擅长将复杂医学发现转化为多媒体内容，包括科学写作、翻译及行业深度报告分析。其科学背景与媒体运营经验使其能够同时驾驭学术严谨性与传播感召力，是领域内罕见的专家型传播者。</p>
+    <section>
+        <h2 id="section-about">作者简介</h2>
+        <div id="about-content"></div>
+    </section>
+</main>
 
 <footer>
-<p>&copy; 2026 Juan Li 博士 / All Rights Reserved</p>
+    <p id="footer-text">&copy; 2026 Juan Li 博士 / All Rights Reserved</p>
 </footer>
-</main>
+
+<script>
+    // 数据部分
+    const articlesData = [
+        {
+            "zhTitle": "一起真实案例曝出可怕细节：AI如何两次把人“逼疯”",
+            "enTitle": "Real Case Reveals Shocking Details: How AI Drove a Person 'Crazy' Twice",
+            "zhAbstract": "本文深入剖析了一起令人震惊的真实案例：一名医护人员在与AI聊天过程中两次陷入急性精神障碍。这种现象被科学家定义为“技术介导的二联性精神病”，揭示了高度个性化的人机互动如何演变成危险的“单人回音室”。研究指出，AI聊天机器人为了“让用户满意”，天然倾向于顺从和迎合，而非提供现实校正。当人类的拟人化倾向与AI的肯定性反馈叠加，用户可能会陷入被技术放大后的偏执念头回路，将心灵慰藉变成精神陷阱。这一发现为我们敲响了警钟：在AI日益融入日常生活的今天，我们不仅需要关注其功能性，更需警惕其对人类心理健康的潜在威胁。",
+            "enAbstract": "This article provides an in-depth analysis of a shocking real-life case where a healthcare worker fell into acute mental disorders twice while interacting with AI. Scientists define this phenomenon as 'technology-mediated folie à deux,' revealing how highly personalized human-AI interactions can evolve into dangerous 'single-person echo chambers.' The study notes that AI chatbots, designed to 'satisfy users,' naturally tend to comply and cater rather than provide reality correction. When human anthropomorphic tendencies overlap with AI's affirmative feedback, users may become trapped in paranoid thought loops amplified by technology, turning emotional solace into a mental trap. This discovery serves as a wake-up call: as AI becomes increasingly integrated into daily life, we must not only focus on its functionality but also remain vigilant against its potential threats to human mental health.",
+            "link": "https://news.qq.com/rain/a/20251229A01YC600",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "加拿大批准克隆肉进超市，美国网友破防：我们可能吃很久了",
+            "enTitle": "Canada Approves Clone Meat for Supermarkets, Americans Shocked: We Might Have Been Eating It for a Long Time",
+            "zhAbstract": "2025年秋，加拿大正式认可克隆肉为普通食品，允许其在不加特殊标签的情况下进入超市货架。这一决策引发了公众对食品安全和伦理的广泛讨论，也让人们重新审视这项早已在农业界应用的成熟技术。克隆肉并非实验室合成肉，而是来自通过体细胞核移植技术培育的动物。科学评估显示，健康克隆动物的产品在营养成分上与普通产品并无二致。尽管科学界给出了安全背书，但消费者对于“复制食品”的心理隔阂依然存在。",
+            "enAbstract": "In the fall of 2025, Canada officially recognized cloned meat as a common food, allowing it to enter supermarket shelves without special labeling. This decision sparked widespread public discussion on food safety and ethics, prompting a re-examination of this mature technology already used in agriculture. Cloned meat is not lab-grown meat but comes from animals bred through somatic cell nuclear transfer. Scientific assessments show that products from healthy cloned animals are nutritionally identical to conventional ones. Despite scientific endorsements of safety, psychological barriers among consumers regarding 'replicated food' persist.",
+            "link": "https://cj.sina.com.cn/articles/view/1618051664/60718250027019gdw?froms=ggmp",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "科学家重新定义肥胖，你一直在用的“金指标”要变了",
+            "enTitle": "Scientists Redefine Obesity: The 'Golden Standard' You Rely On Is Changing",
+            "zhAbstract": "长期被视为衡量肥胖“金标准”的BMI（身体质量指数）正面临前所未有的挑战。最新科学共识指出，BMI无法区分肌肉与脂肪，也无法反映脂肪分布，已不再适合作为临床诊断个体肥胖的唯一指标。新的诊断体系提出了“临床肥胖症”的概念，将重点从单纯的体重数字转向脂肪组织对机体造成的实际功能损害。这一转变不仅有助于减少社会对肥胖者的污名化，更推动了医学界向精准医疗迈进。",
+            "enAbstract": "BMI (Body Mass Index), long considered the 'gold standard' for measuring obesity, is facing unprecedented challenges. The latest scientific consensus indicates that BMI cannot distinguish between muscle and fat, nor does it reflect fat distribution, making it no longer suitable as the sole indicator for clinical diagnosis of individual obesity. A new diagnostic system introduces the concept of 'clinical obesity,' shifting the focus from simple weight numbers to the actual functional damage caused by adipose tissue to the body. This shift not only helps reduce social stigma against obese individuals but also pushes the medical community toward precision medicine.",
+            "link": "https://www.kepuchina.cn/article/articleinfo?business_type=100&classify=0&ar_id=579418",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "7岁血癌女孩绝境逢生，这项疗法为何成为“最后希望”？",
+            "enTitle": "7-Year-Old Leukemia Patient Survives: Why This Therapy Became the 'Last Hope'",
+            "zhAbstract": "Emily Whitehead的抗癌奇迹让CAR-T疗法走进了大众视野。作为一种“活的药物”，这种革命性的细胞基因治疗技术通过改造患者自身的T细胞，使其成为能精准识别并消灭癌细胞的“生物导弹”。尽管Emily在治疗过程中经历了严重的免疫风暴，但科学家的及时干预让她最终获得了完全缓解。这一案例不仅证明了CAR-T疗法的巨大潜力，也为无数血液癌症患者带来了重生的希望。",
+            "enAbstract": "Emily Whitehead's miraculous recovery from cancer brought CAR-T therapy into the public eye. As a 'living drug,' this revolutionary cell and gene therapy technology modifies a patient's own T cells to become 'biological missiles' that precisely identify and destroy cancer cells. Although Emily experienced a severe cytokine storm during treatment, timely intervention by scientists led to her complete remission. This case not only proves the immense potential of CAR-T therapy but also brings hope for rebirth to countless blood cancer patients.",
+            "link": "https://www.kepuchina.cn/article/articleinfo?business_type=100&classify=0&ar_id=648657",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "接种新冠mRNA疫苗后，肿瘤意外消退！Nature研究证实其效果",
+            "enTitle": "Unexpected Tumor Regression After COVID-19 mRNA Vaccination Confirmed by Nature Study",
+            "zhAbstract": "《自然》杂志发表的一项重磅研究发现，新冠mRNA疫苗在预防病毒之余，竟能作为强大的通用免疫调节剂，系统性地唤醒机体的抗肿瘤免疫力。临床数据显示，接种疫苗的癌症患者生存期显著延长。这一发现为癌症免疫治疗开辟了全新的低成本路径，为设计更优的通用型免疫辅助药物提供了重要启示。",
+            "enAbstract": "A major study published in 'Nature' found that beyond preventing viruses, the COVID-19 mRNA vaccine can act as a powerful universal immunomodulator, systematically awakening the body's anti-tumor immunity. Clinical data shows that cancer patients who received the vaccine had significantly longer survival periods. This discovery opens a new low-cost path for cancer immunotherapy and provides important insights for designing better universal immune adjuvant drugs.",
+            "link": "https://www.163.com/dy/article/KDGTH0SI05327918.html",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "继心肝肾后，猪肺也成功移植人体，异种器官移植还要走多远的路？",
+            "enTitle": "After Heart, Liver, and Kidney, Pig Lung Successfully Transplanted into Human: How Far is Xenotransplantation?",
+            "zhAbstract": "2025年8月，中国科研团队成功将基因编辑猪肺移植到一名脑死亡受体体内，并实现长达九天的通气与气体交换。猪肺被认为是异种移植中最复杂的器官之一，研究人员通过精密的基因编辑技术敲除排斥基因，并敲入人类保护性基因。实验成功验证了技术可行性，异种移植正从科幻走向现实。",
+            "enAbstract": "In August 2025, a Chinese research team successfully transplanted a gene-edited pig lung into a brain-dead recipient, achieving nine days of ventilation and gas exchange. Pig lungs are considered one of the most complex organs for xenotransplantation. Researchers used precise gene-editing technology to knock out rejection genes and knock in human protective genes. The experiment successfully validated the technical feasibility, bringing xenotransplantation from science fiction to reality.",
+            "link": "https://cloud.kepuchina.cn/newSearch/imgText?id=7370579367073513472",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "90多岁的女儿仍健康，117岁老人捐出自己的长寿“密码”",
+            "enTitle": "117-Year-Old Donates Longevity 'Secret', Daughter in Her 90s Still Healthy",
+            "zhAbstract": "全球最长寿老人Maria Branyas Morera以117岁高龄离世，她留下的生物样本为科学家解锁“健康衰老”提供了珍贵线索。研究发现，她的长寿是遗传、代谢与肠道菌群共同作用的结果。其肠道菌群多样性远超同龄人，生物年龄比实际年龄年轻近十岁，为健康衰老研究提供新思路。",
+            "enAbstract": "Maria Branyas Morera, the world's oldest person, passed away at 117, leaving behind biological samples that provide precious clues for scientists to unlock 'healthy aging.' Research found that her longevity resulted from a combination of genetics, metabolism, and gut microbiota. Her gut microbial diversity far exceeded that of her peers, and her biological age was nearly ten years younger than her chronological age, offering new insights for healthy aging research.",
+            "link": "https://www.163.com/dy/article/KD1H58DC05327918.html",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "诺和诺德与开普乐生物的跨境收购纠纷：临床不确定性的教训",
+            "enTitle": "Novo Nordisk and KBP Cross-Border Acquisition Dispute: Lessons from Clinical Uncertainty",
+            "zhAbstract": "深度报道剖析制药巨头诺和诺德与中国生物科技公司开普乐之间高达13亿美元的收购纠纷。争议核心在临床数据披露义务与中期分析结果解读差异，折射出生命科学领域面对科学不确定性时的商业风险。",
+            "enAbstract": "This in-depth report analyzes the $1.3 billion acquisition dispute between pharmaceutical giant Novo Nordisk and Chinese biotech company KBP. The core of the controversy lies in differences regarding clinical data disclosure obligations and the interpretation of interim analysis results, reflecting the commercial risks faced in the life sciences sector when dealing with scientific uncertainty.",
+            "link": "https://www.pharmadj.com/ssr/en/article/1980099002068201474",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "3900万新病例？儿童肥胖正在改写一代中国人的健康轨迹",
+            "enTitle": "39 Million New Cases? Childhood Obesity is Reshaping a Generation in China",
+            "zhAbstract": "中国正面临严峻的儿童肥胖危机。研究显示，肥胖病例快速上升且呈现“农村包围城市”趋势。含糖饮料、父母遗传与睡眠不足为关键风险因素。童年肥胖具有“轨迹效应”，会影响成年后健康。防控需从生命早期干预，依赖家庭与政策支持。",
+            "enAbstract": "China is facing a severe childhood obesity crisis. Research shows that obesity cases are rising rapidly, with a trend of 'rural areas surrounding cities.' Sugary drinks, parental genetics, and lack of sleep are key risk factors. Childhood obesity has a 'trajectory effect,' impacting health in adulthood. Prevention and control require intervention from early life, relying on family and policy support.",
+            "link": "https://news.qq.com/rain/a/20250908A03NSY00",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "鱼儿性别紊乱，秃鹫肾衰竭，这个杀手还要制造多少生态灾难？",
+            "enTitle": "Fish Gender Disorder, Vulture Kidney Failure: How Much More Ecological Disaster Will This Killer Cause?",
+            "zhAbstract": "药物作为新兴污染物进入自然环境，成为野生动物隐形杀手。水域药物超标引发生态连锁反应，从鱼类性别改变到秃鹫大灭绝。药物污染破坏生物多样性，也危及人类健康，需推动绿色制药与污水处理升级。",
+            "enAbstract": "Pharmaceuticals, as emerging pollutants entering the natural environment, have become invisible killers of wildlife. Excessive drug levels in water bodies trigger ecological chain reactions, from gender changes in fish to the mass extinction of vultures. Pharmaceutical pollution destroys biodiversity and endangers human health, necessitating the promotion of green pharmaceuticals and upgrades in wastewater treatment.",
+            "link": "https://news.qq.com/rain/a/20250221A03A7U00",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "如何拯救食物过敏者的餐桌？",
+            "enTitle": "How to Rescue the Table for Food Allergy Patients?",
+            "zhAbstract": "全球食物过敏发病率上升，传统“被动回避”影响生活质量。科学家利用CRISPR基因编辑改造小麦、花生、大豆过敏原，培育低免疫原性作物，降低过敏风险，为食物过敏者提供更多选择。",
+            "enAbstract": "With the global incidence of food allergies rising, traditional 'passive avoidance' affects quality of life. Scientists are using CRISPR gene editing to modify allergens in wheat, peanuts, and soybeans, cultivating low-immunogenicity crops to reduce allergy risks and provide more choices for food allergy sufferers.",
+            "link": "https://iscientists.blog.caixin.com/archives/281745",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "跨越时空的科学对话：现代科学解开160年前的遗传学密码",
+            "enTitle": "Cross-Time Scientific Dialogue: Modern Science Deciphers 160-Year-Old Genetics",
+            "zhAbstract": "160年前孟德尔奠定遗传学基础，如今科研团队利用基因组学破解豌豆七性状的分子机制，建立庞大遗传数据库，为精准育种提供基因资源，古老豌豆焕发新生。",
+            "enAbstract": "160 years ago, Mendel laid the foundation of genetics. Today, research teams are using genomics to decipher the molecular mechanisms of seven traits in peas, establishing a vast genetic database to provide gene resources for precision breeding, giving ancient peas a new lease on life.",
+            "link": "https://cloud.kepuchina.cn/newSearch/imgText?id=7326654547563003904",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "钛合金：医疗领域的“万能金属”是如何炼成的？",
+            "enTitle": "Titanium Alloy: How the 'Universal Metal' of Medicine is Made",
+            "zhAbstract": "钛合金因生物相容性、高强度与耐腐蚀性被誉为医疗“万能金属”。通过诱导免疫系统进入修复模式，它与骨组织完美整合，为骨科、牙科患者提供可靠植入物，未来可具更强生物活性。",
+            "enAbstract": "Titanium alloy is hailed as the 'universal metal' of medicine due to its biocompatibility, high strength, and corrosion resistance. By inducing the immune system into repair mode, it integrates perfectly with bone tissue, providing reliable implants for orthopedic and dental patients, with potential for even greater bioactivity in the future.",
+            "link": "https://cloud.kepuchina.cn/newSearch/imgText?id=7347674783378661376",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "预防痴呆应该怎么吃？最新科学研究告诉你",
+            "enTitle": "How to Eat to Prevent Dementia? Latest Scientific Research Reveals",
+            "zhAbstract": "研究表明约45%的痴呆风险可通过饮食和生活方式改变。浙江大学团队提出“MODERN饮食”，强调橄榄油、绿叶菜、浆果，远离含糖饮料，能显著降低痴呆风险并改善心理健康。",
+            "enAbstract": "Research shows that about 45% of dementia risk can be modified through diet and lifestyle changes. A team from Zhejiang University proposed the 'MODERN diet,' emphasizing olive oil, leafy greens, and berries while avoiding sugary drinks, which can significantly reduce dementia risk and improve mental health.",
+            "link": "https://cloud.kepuchina.cn/newSearch/imgText?id=7354982167336841216",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "科学家重新定义肥胖，你一直在用的金指标要变了（主题深化）",
+            "enTitle": "Scientists Redefine Obesity: The Golden Standard You Rely On (In-Depth)",
+            "zhAbstract": "BMI局限性成为共识。新定义强调肥胖为脂肪受损慢性疾病，诊断应关注健康损害，通过腰围、体脂率和代谢指标精准评估个体风险，有助消除社会偏见，关注整体生活质量。",
+            "enAbstract": "The limitations of BMI have become a consensus. The new definition emphasizes obesity as a chronic disease of impaired adipose tissue. Diagnosis should focus on health damage, using waist circumference, body fat percentage, and metabolic indicators to precisely assess individual risk, helping to eliminate social bias and focus on overall quality of life.",
+            "link": "https://news.qq.com/rain/a/20250214A02YM300",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "挑战40年权威理论，Science子刊：智慧生命诞生或是一种必然",
+            "enTitle": "Challenging 40-Year Authority Theory: Emergence of Intelligent Life May Be Inevitable",
+            "zhAbstract": "《科学进展》研究提出智慧生命演化可能受环境驱动必然出现。地球系统条件设定环境门槛，一旦成熟，生命顺着进化阶梯发展，为地外生命搜寻提供新视角。",
+            "enAbstract": "A study in 'Science Advances' suggests that the evolution of intelligent life may be an inevitable outcome driven by the environment. Earth system conditions set environmental thresholds; once matured, life develops along an evolutionary ladder, providing a new perspective for the search for extraterrestrial life.",
+            "link": "https://news.qq.com/rain/a/20250317A039IE00",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "这种新药堪称“抗癌导弹”，它是如何改变癌症治疗的？",
+            "enTitle": "This New Drug Is a 'Cancer Missile': How It Changes Cancer Therapy",
+            "zhAbstract": "抗体偶联药物（ADC）实现精准打击肿瘤细胞，最大限度保护正常细胞。通过导航、保险与弹头三位一体结构，ADC瓦解顽固癌细胞并产生旁观者效应，引领癌症治疗新时代。",
+            "enAbstract": "Antibody-drug conjugates (ADCs) achieve precise strikes on tumor cells while maximizing protection for normal cells. Through a tripartite structure of navigation, safety, and warhead, ADCs dismantle stubborn cancer cells and produce a bystander effect, leading a new era in cancer treatment.",
+            "link": "https://news.qq.com/rain/a/20250401A09N9700",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "科学家从自家后院挖到“宝”，发了篇Nature",
+            "enTitle": "Scientists Found 'Treasure' in Backyard, Published in Nature",
+            "zhAbstract": "加拿大团队在自家土壤发现新抗生素Lariocidin，可精准打击耐药菌。尽管距离临床仍远，但为全球耐药性危机提供新曙光，提醒自然界仍是创新药物宝库。",
+            "enAbstract": "A Canadian team discovered a new antibiotic, Lariocidin, in their own soil, which can precisely target drug-resistant bacteria. Although still far from clinical use, it provides a new glimmer of hope for the global drug resistance crisis, reminding us that nature remains a treasure trove for innovative drugs.",
+            "link": "https://news.qq.com/rain/a/20250408A03BOP00",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "仅靠空腹抽血，不能良好评估代谢健康，中国科学家给出新方法",
+            "enTitle": "Fasting Blood Alone Cannot Assess Metabolic Health, Chinese Scientists Offer New Method",
+            "zhAbstract": "传统体检只关注空腹指标不足以评估代谢能力。双维度健康模型引入稳态适应评分，可动态评估餐后代谢变化，为个性化营养和早期疾病预防提供精准工具。",
+            "enAbstract": "Traditional physical examinations focusing only on fasting indicators are insufficient to assess metabolic capacity. A dual-dimensional health model introducing a steady-state adaptation score can dynamically assess postprandial metabolic changes, providing a precise tool for personalized nutrition and early disease prevention.",
+            "link": "https://news.qq.com/rain/a/20250504A02XX800",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "人们宁愿养狗，也不生娃？背后的科学解释找到了",
+            "enTitle": "People Prefer Dogs to Babies? The Scientific Explanation Found",
+            "zhAbstract": "全球生育率下降，宠物狗成为许多家庭情感核心。研究显示狗与人类幼儿情感依恋相似，养狗提供易控、即时反馈的情感满足，形成新生活方式与宠物经济现象。",
+            "enAbstract": "With global fertility rates declining, pet dogs have become the emotional core of many families. Research shows that the emotional attachment between dogs and humans is similar to that with human infants. Owning a dog provides easily controllable, immediate emotional satisfaction, forming a new lifestyle and pet economy phenomenon.",
+            "link": "https://news.qq.com/rain/a/20250609A03SF600",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "跟着视频学了17个小时，它就能独立主刀做手术",
+            "enTitle": "After 17 Hours of Video Learning, It Can Perform Surgery Independently",
+            "zhAbstract": "AI机器人SRT-H通过观看手术视频17小时即可独立完成复杂操作。具备双层大脑，一层理解视觉场景，一层精准执行动作，标志手术机器人从辅助工具迈向自主执行体。",
+            "enAbstract": "The AI robot SRT-H can independently complete complex operations after watching 17 hours of surgical videos. Equipped with a dual-layer brain—one for understanding visual scenes and another for precise action execution—it marks the transition of surgical robots from auxiliary tools to autonomous agents.",
+            "link": "https://news.qq.com/rain/a/20250811A02NSZ00",
+            "hasAbstract": true
+        },
+        {
+            "zhTitle": "给大脑补“锂”后，丢失的记忆力奇迹般恢复了",
+            "enTitle": "Memory Miraculously Restored After Lithium Supplementation",
+            "zhAbstract": "哈佛医学院研究揭示锂在阿尔茨海默病中关键作用。患者大脑锂缺乏激活有害分子开关，加速蛋白沉积。补充特殊锂可恢复记忆，为早期防治提供新方向。",
+            "enAbstract": "Harvard Medical School research reveals the critical role of lithium in Alzheimer's disease. Lithium deficiency in the patient's brain activates harmful molecular switches, accelerating protein deposition. Supplementing with special lithium can restore memory, providing a new direction for early prevention and treatment.",
+            "link": "https://news.qq.com/rain/a/20250829A04S5M00",
+            "hasAbstract": true
+        },
+        { "zhTitle": "跨界交叉，颠覆式医疗创新的秘诀？", "enTitle": "Disruptive Medical Innovation Secrets", "date": "2021-08-11", "platform": "本草圈", "hasAbstract": false, "link": "" },
+        { "zhTitle": "化学防晒剂会进入血液，夏季如何安全防晒？", "enTitle": "Safe Sunscreen in Summer", "date": "2020-05-18", "platform": "健康学人", "hasAbstract": false, "link": "" },
+        { "zhTitle": "王辰团队详解：武汉16家方舱医院的作用", "enTitle": "Wuhan Fangcang Hospitals Role", "date": "2020-04-22", "platform": "知识分子", "hasAbstract": false, "link": "" },
+        { "zhTitle": "武汉为全球防疫提供了哪些宝贵经验？", "enTitle": "Wuhan's Lessons for Global Pandemic", "date": "2020-04-12", "platform": "知识分子", "hasAbstract": false, "link": "" },
+        { "zhTitle": "出院复阳难题，也许可以试试血清学检测", "enTitle": "Serological Testing for COVID Relapses", "date": "2020-03-12", "platform": "赛先生", "hasAbstract": false, "link": "" },
+        { "zhTitle": "世卫：战胜新冠病毒，哪些科研问题亟待解决？", "enTitle": "WHO: Key COVID Research Questions", "date": "2020-03-07", "platform": "健康学人", "hasAbstract": false, "link": "" },
+        { "zhTitle": "武汉的感染规模预计有多大？", "enTitle": "Estimated Infection Scale in Wuhan", "date": "2020-02-14", "platform": "赛先生", "hasAbstract": false, "link": "" },
+        { "zhTitle": "癌症靶点研究有哪些不靠谱？", "enTitle": "Pitfalls in Cancer Target Research", "date": "2019-12-02", "platform": "返朴", "hasAbstract": false, "link": "" },
+        { "zhTitle": "常喝甜饮料或纯果汁需警惕癌症风险升高", "enTitle": "Sugary Drinks and Cancer Risk", "date": "2019-07-24", "platform": "知识分子", "hasAbstract": false, "link": "" },
+        { "zhTitle": "胃肠道病早发现：可吞咽设备的未来", "enTitle": "Future of Swallowable Devices", "date": "2019-03-27", "platform": "中国科普博览", "hasAbstract": false, "link": "" },
+        { "zhTitle": "5万人基因外显子组数据全球共享！", "enTitle": "Global Sharing of 50,000 Exomes", "date": "2019-03-18", "platform": "健康学人", "hasAbstract": false, "link": "" },
+        { "zhTitle": "愈发普遍的食物过敏，你中招了吗？", "enTitle": "Rising Food Allergies", "date": "2019-03-07", "platform": "中国科普博览", "hasAbstract": false, "link": "" },
+        { "zhTitle": "吃坚果有益于糖尿病患者的心脏健康", "enTitle": "Nuts and Diabetes Heart Health", "date": "2019-03-01", "platform": "知识分子", "hasAbstract": false, "link": "" },
+        { "zhTitle": "中英科学家将抗心律失常药物重新分类", "enTitle": "Reclassifying Antiarrhythmic Drugs", "date": "2018-10-27", "platform": "知识分子", "hasAbstract": false, "link": "" },
+        { "zhTitle": "为什么患有过敏性鼻炎的人也易发哮喘？", "enTitle": "Allergic Rhinitis and Asthma", "date": "2018-09-16", "platform": "健康学人", "hasAbstract": false, "link": "" },
+        { "zhTitle": "五千人的研究数据告诉你：男女大脑真不同", "enTitle": "Male vs Female Brain Differences", "date": "2018-08-17", "platform": "健康学人", "hasAbstract": false, "link": "" },
+        { "zhTitle": "想要拥有彭于晏同款肌肉？膳食蛋白要足够", "enTitle": "Protein for Muscle Building", "date": "2018-07-19", "platform": "健康学人", "hasAbstract": false, "link": "" },
+        { "zhTitle": "哪些生活习惯可让糖尿病患者获益？", "enTitle": "Habits for Diabetes Patients", "date": "2018-06-18", "platform": "知识分子", "hasAbstract": false, "link": "" },
+        { "zhTitle": "哪种饮食方式最健康：地中海饮食夺冠", "enTitle": "Healthiest Diet Rankings", "date": "2018-01-14", "platform": "知识分子", "hasAbstract": false, "link": "" },
+        { "zhTitle": "近千种食物营养排名，猪油排第八？", "enTitle": "Nutritional Ranking of 1,000 Foods", "date": "2018-04-13", "platform": "知识分子", "hasAbstract": false, "link": "" },
+        { "zhTitle": "少肥肉或少主食，哪个更减肥？", "enTitle": "Low Fat vs Low Carb for Weight Loss", "date": "2018-03-17", "platform": "知识分子", "hasAbstract": false, "link": "" },
+        { "zhTitle": "中国克隆猕猴今天登上 Cell 和各大头条", "enTitle": "Chinese Cloned Monkeys in Cell", "date": "2018-01-25", "platform": "知社学术圈", "hasAbstract": false, "link": "" },
+        { "zhTitle": "受孕前父母的饮食和生活方式关乎子女健康", "enTitle": "Pre-conception Lifestyle and Child Health", "date": "2018-04-18", "platform": "知社学术圈", "hasAbstract": false, "link": "" },
+        { "zhTitle": "贪杯影响预期寿命，合适的饮酒量是多少？", "enTitle": "Alcohol and Life Expectancy", "date": "2018-04-13", "platform": "知社学术圈", "hasAbstract": false, "link": "" },
+        { "zhTitle": "中国学者揭示衰老的遗传基础", "enTitle": "Genetic Basis of Aging", "date": "2017-11-09", "platform": "知社学术圈", "hasAbstract": false, "link": "" },
+        { "zhTitle": "多吃蔬果无益，高脂膳食更健康？", "enTitle": "High-Fat Diet Controversy", "date": "2017-09-05", "platform": "知识分子", "hasAbstract": false, "link": "" },
+        { "zhTitle": "不要打扰睡着的婴儿，他们正在“学习”", "enTitle": "Learning While Sleeping for Babies", "date": "2017-08-30", "platform": "知识分子", "hasAbstract": false, "link": "" },
+        { "zhTitle": "RNA好累：可编码的“非编码RNA”", "enTitle": "Coding Non-coding RNA", "date": "2016-11-01", "platform": "赛先生", "hasAbstract": false, "link": "" },
+        { "zhTitle": "专访浙江大学王志萍、郭行夫妇", "enTitle": "Interview with ZJU Scientific Couple", "date": "2016-08-06", "platform": "赛先生", "hasAbstract": false, "link": "" },
+        { "zhTitle": "专访 Cell Research 常务副主编李党生", "enTitle": "Interview with Li Dangsheng", "date": "2016-08-05", "platform": "赛先生", "hasAbstract": false, "link": "" },
+        { "zhTitle": "到底哪一类脂肪对你有害？", "enTitle": "Which Fat Is Harmful?", "date": "2016-07-22", "platform": "赛先生", "hasAbstract": false, "link": "" },
+        { "zhTitle": "大数据告诉你哪些基因参与Ⅱ型糖尿病的遗传", "enTitle": "Genetics of Type 2 Diabetes", "date": "2016-07-21", "platform": "赛先生", "hasAbstract": false, "link": "" },
+        { "zhTitle": "肿瘤免疫疗法之 CAR-T 细胞疗法", "enTitle": "CAR-T Cell Therapy Explained", "date": "2016-03-11", "platform": "赛先生", "hasAbstract": false, "link": "" }
+    ];
+
+    const langData = {
+        zh: {
+            title: "李娟博士科普作品集",
+            subtitle: "李娟博士的科学传播与文章作品",
+            btn: "English Version",
+            featured: "精选文章",
+            more: "更多文章",
+            about: "作者简介",
+            readMore: "阅读全文",
+            abstract: "摘要",
+            aboutHtml: `
+                <p>Juan Li 博士是一位资深科学记者及医学撰稿人，拥有生命科学博士学位。她的工作聚焦于生物医学研究、公共卫生政策及其对人类现实生活的影响。作为科研训练出身的长期非虚构写作者，她致力于将复杂科学证据转化为严谨而易懂的叙述，同时保留科学的不确定性。她的报道经常探讨科学知识离开实验室后的应用或曲解情况，包括医疗体系、技术平台、监管框架和日常决策。关注领域包括疾病筛查、新兴技术、心理健康及慢性疾病。</p>
+                <p>Juan Li 博士曾在国际知名医学院及顶尖临床研究所完成联合培养与癌症研究博士后训练，在肿瘤免疫、转化医学及细胞遗传学领域积累了深厚学术造诣。她不仅在国际顶尖学术期刊发表高水平论文，还多次在国际学术会议展示科研成果。职业生涯中，她成功实现科研人员向科学传播领袖的跨界转型，领导并协作多个顶尖科学传播媒体联盟，完成数百项复杂传播项目。她具备卓越商业洞察力与内容策划能力，曾为多家欧美医药及医疗器械公司制定市场媒体策略，并通过创作多篇阅读量超过10万+的科普深度稿件，成功搭建学术前沿与大众认知之间的桥梁。</p>
+                <p>凭借双语沟通与编辑能力，Juan Li 博士长期担任国家级科学协会、顶级科研机构及国际学术出版机构内容顾问及特约撰稿人，擅长将复杂医学发现转化为多媒体内容，包括科学写作、翻译及行业深度报告分析。其科学背景与媒体运营经验使其能够同时驾驭学术严谨性与传播感召力，是领域内罕见的专家型传播者。</p>
+            `
+        },
+        en: {
+            title: "Juan Li PhD Science Articles",
+            subtitle: "Science Communication & Articles by Juan Li, PhD",
+            btn: "中文版本",
+            featured: "Featured Articles",
+            more: "More Articles",
+            about: "About / Author Statement",
+            readMore: "Read Full Article",
+            abstract: "Abstract",
+            aboutHtml: `
+                <p>Dr. Juan Li is a senior science journalist and medical writer with a PhD in Life Sciences. Her work focuses on biomedical research, public health policy, and their real-world impacts on human life. As a long-form non-fiction writer with rigorous scientific training, she is dedicated to translating complex scientific evidence into precise yet accessible narratives while preserving scientific uncertainty. Her reporting often explores the application or misinterpretation of scientific knowledge once it leaves the laboratory, including healthcare systems, technology platforms, regulatory frameworks, and everyday decision-making. Her areas of focus include disease screening, emerging technologies, mental health, and chronic diseases.</p>
+                <p>Dr. Li completed her joint training and postdoctoral research in cancer at world-renowned medical schools and top-tier clinical research institutes, gaining profound expertise in tumor immunology, translational medicine, and cytogenetics. She has published high-level papers in top international academic journals and presented her research at numerous international conferences. Throughout her career, she has successfully transitioned from a researcher to a leader in science communication, heading and collaborating with multiple premier science media alliances to complete hundreds of complex communication projects. With exceptional business insight and content strategy skills, she has developed market media strategies for several European and American pharmaceutical and medical device companies. By creating multiple deep-dive science articles with over 100,000 views, she has successfully bridged the gap between academic frontiers and public perception.</p>
+                <p>With her bilingual communication and editorial expertise, Dr. Li serves as a long-term content consultant and contributing writer for national science associations, top research institutions, and international academic publishers. She excels at transforming complex medical discoveries into multimedia content, including scientific writing, translation, and in-depth industry analysis. Her unique combination of scientific background and media operations experience allows her to master both academic rigor and communicative appeal, making her a rare expert-level communicator in the field.</p>
+            `
+        }
+    };
+
+    let currentLang = 'zh';
+
+    function render() {
+        const data = langData[currentLang];
+        document.getElementById('page-title').innerText = data.title;
+        document.getElementById('page-subtitle').innerText = data.subtitle;
+        document.getElementById('langBtn').innerText = data.btn;
+        document.getElementById('section-featured').innerText = data.featured;
+        document.getElementById('section-more').innerText = data.more;
+        document.getElementById('section-about').innerText = data.about;
+        document.getElementById('about-content').innerHTML = data.aboutHtml;
+
+        const featuredContainer = document.getElementById('featured-container');
+        const moreList = document.getElementById('more-list');
+        featuredContainer.innerHTML = '';
+        moreList.innerHTML = '';
+
+        articlesData.forEach(art => {
+            if (art.hasAbstract) {
+                const div = document.createElement('div');
+                div.className = 'featured-article';
+                div.innerHTML = `
+                    <h3>${currentLang === 'zh' ? art.zhTitle : art.enTitle}</h3>
+                    <p><strong>${data.abstract}:</strong> ${currentLang === 'zh' ? art.zhAbstract : art.enAbstract}</p>
+                    ${art.link ? `<a href="${art.link}" target="_blank" class="read-more">${data.readMore}</a>` : ''}
+                `;
+                featuredContainer.appendChild(div);
+            } else {
+                const li = document.createElement('li');
+                const meta = currentLang === 'zh' ? 
+                    `发表于 ${art.date}，平台：${art.platform}` : 
+                    `Published on ${art.date}, Platform: ${art.platform}`;
+                
+                li.innerHTML = `
+                    ${art.link ? `<a href="${art.link}" target="_blank">` : '<span>'}
+                    ${currentLang === 'zh' ? art.zhTitle : art.enTitle}
+                    ${art.link ? '</a>' : '</span>'}
+                    <span class="article-meta">${meta}</span>
+                `;
+                moreList.appendChild(li);
+            }
+        });
+    }
+
+    function toggleLanguage() {
+        currentLang = currentLang === 'zh' ? 'en' : 'zh';
+        render();
+        window.scrollTo(0, 0);
+    }
+
+    // 初始化渲染
+    window.onload = render;
+</script>
+
 </body>
 </html>
