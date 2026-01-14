@@ -287,7 +287,7 @@
     </div>
 
     <script>
-        // 数据部分
+        // 数据部分（优化enTitle，贴合中文原意+符合英语媒体标题规范）
         const articlesData = [
           {
               "zhTitle": "40岁后必查肺功能和骨密度，为何中国的官方建议与别国不同？",
@@ -298,7 +298,7 @@
               "hasAbstract": true,
               "zhTag": "健康政策",
               "enTag": "Health Policy"
-           }，
+          },
            {
                 "zhTitle": "一起真实案例曝出可怕细节：AI如何两次把人“逼疯”",
                 "enTitle": "Real Case Reveals Shocking Details: How AI Drove a Person 'Crazy' Twice",
@@ -519,39 +519,336 @@
                 "zhTag": "生命科学",
                 "enTag": "Life Science"
             },
-            { "zhTitle": "跨界交叉，颠覆式医疗创新的秘诀？", "enTitle": "Disruptive Medical Innovation Secrets", "date": "2021-08-11", "platform": "本草圈", "hasAbstract": false, "link": "", "zhTag": "产业进展", "enTag": "Industry Progress" },
-            { "zhTitle": "化学防晒剂会进入血液，夏季如何安全防晒？", "enTitle": "Safe Sunscreen in Summer", "date": "2020-05-18", "platform": "健康学人", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "王辰团队详解：武汉16家方舱医院的作用", "enTitle": "Wuhan Fangcang Hospitals Role", "date": "2020-04-22", "platform": "知识分子", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "武汉为全球防疫提供了哪些宝贵经验？", "enTitle": "Wuhan's Lessons for Global Pandemic", "date": "2020-04-12", "platform": "知识分子", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "出院复阳难题，也许可以试试血清学检测", "enTitle": "Serological Testing for COVID Relapses", "date": "2020-03-12", "platform": "赛先生", "hasAbstract": false, "link": "", "zhTag": "医疗技术", "enTag": "Medical Technology" },
-            { "zhTitle": "世卫：战胜新冠病毒，哪些科研问题亟待解决？", "enTitle": "WHO: Key COVID Research Questions", "date": "2020-03-07", "platform": "健康学人", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "武汉的感染规模预计有多大？", "enTitle": "Estimated Infection Scale in Wuhan", "date": "2020-02-14", "platform": "赛先生", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "癌症靶点研究有哪些不靠谱？", "enTitle": "Pitfalls in Cancer Target Research", "date": "2019-12-02", "platform": "返朴", "hasAbstract": false, "link": "", "zhTag": "生命科学", "enTag": "Life Science" },
-            { "zhTitle": "常喝甜饮料或纯果汁需警惕癌症风险升高", "enTitle": "Sugary Drinks and Cancer Risk", "date": "2019-07-24", "platform": "知识分子", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "胃肠道病早发现：可吞咽设备的未来", "enTitle": "Future of Swallowable Devices", "date": "2019-03-27", "platform": "中国科普博览", "hasAbstract": false, "link": "", "zhTag": "医疗技术", "enTag": "Medical Technology" },
-            { "zhTitle": "5万人基因外显子组数据全球共享！", "enTitle": "Global Sharing of 50,000 Exomes", "date": "2019-03-18", "platform": "健康学人", "hasAbstract": false, "link": "", "zhTag": "生命科学", "enTag": "Life Science" },
-            { "zhTitle": "愈发普遍的食物过敏，你中招了吗？", "enTitle": "Rising Food Allergies", "date": "2019-03-07", "platform": "中国科普博览", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "吃坚果有益于糖尿病患者的心脏健康", "enTitle": "Nuts and Diabetes Heart Health", "date": "2019-03-01", "platform": "知识分子", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "中英科学家将抗心律失常药物重新分类", "enTitle": "Reclassifying Antiarrhythmic Drugs", "date": "2018-10-27", "platform": "知识分子", "hasAbstract": false, "link": "", "zhTag": "医疗技术", "enTag": "Medical Technology" },
-            { "zhTitle": "为什么患有过敏性鼻炎的人也易发哮喘？", "enTitle": "Allergic Rhinitis and Asthma", "date": "2018-09-16", "platform": "健康学人", "hasAbstract": false, "link": "", "zhTag": "生命科学", "enTag": "Life Science" },
-            { "zhTitle": "五千人的研究数据告诉你：男女大脑真不同", "enTitle": "Male vs Female Brain Differences", "date": "2018-08-17", "platform": "健康学人", "hasAbstract": false, "link": "", "zhTag": "生命科学", "enTag": "Life Science" },
-            { "zhTitle": "想要拥有彭于晏同款肌肉？膳食蛋白要足够", "enTitle": "Protein for Muscle Building", "date": "2018-07-19", "platform": "健康学人", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "哪些生活习惯可让糖尿病患者获益？", "enTitle": "Habits for Diabetes Patients", "date": "2018-06-18", "platform": "知识分子", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "哪种饮食方式最健康：地中海饮食夺冠", "enTitle": "Healthiest Diet Rankings", "date": "2018-01-14", "platform": "知识分子", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "近千种食物营养排名，猪油排第八？", "enTitle": "Nutritional Ranking of 1,000 Foods", "date": "2018-04-13", "platform": "知识分子", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "少肥肉或少主食，哪个更减肥？", "enTitle": "Low Fat vs Low Carb for Weight Loss", "date": "2018-03-17", "platform": "知识分子", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "中国克隆猕猴今天登上 Cell 和各大头条", "enTitle": "Chinese Cloned Monkeys in Cell", "date": "2018-01-25", "platform": "知社学术圈", "hasAbstract": false, "link": "", "zhTag": "生命科学", "enTag": "Life Science" },
-            { "zhTitle": "受孕前父母的饮食和生活方式关乎子女健康", "enTitle": "Pre-conception Lifestyle and Child Health", "date": "2018-04-18", "platform": "知社学术圈", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "贪杯影响预期寿命，合适的饮酒量是多少？", "enTitle": "Alcohol and Life Expectancy", "date": "2018-04-13", "platform": "知社学术圈", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "中国学者揭示衰老的遗传基础", "enTitle": "Genetic Basis of Aging", "date": "2017-11-09", "platform": "知社学术圈", "hasAbstract": false, "link": "", "zhTag": "生命科学", "enTag": "Life Science" },
-            { "zhTitle": "多吃蔬果无益，高脂膳食更健康？", "enTitle": "High-Fat Diet Controversy", "date": "2017-09-05", "platform": "知识分子", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "不要打扰睡着的婴儿，他们正在“学习”", "enTitle": "Learning While Sleeping for Babies", "date": "2017-08-30", "platform": "知识分子", "hasAbstract": false, "link": "", "zhTag": "生命科学", "enTag": "Life Science" },
-            { "zhTitle": "RNA好累：可编码的“非编码RNA”", "enTitle": "Coding Non-coding RNA", "date": "2016-11-01", "platform": "赛先生", "hasAbstract": false, "link": "", "zhTag": "生命科学", "enTag": "Life Science" },
-            { "zhTitle": "专访浙江大学王志萍、郭行夫妇", "enTitle": "Interview with ZJU Scientific Couple", "date": "2016-08-06", "platform": "赛先生", "hasAbstract": false, "link": "", "zhTag": "行业访谈", "enTag": "Industry Interview" },
-            { "zhTitle": "专访 Cell Research 常务副主编李党生", "enTitle": "Interview with Li Dangsheng", "date": "2016-08-05", "platform": "赛先生", "hasAbstract": false, "link": "", "zhTag": "行业访谈", "enTag": "Industry Interview" },
-            { "zhTitle": "到底哪一类脂肪对你有害？", "enTitle": "Which Fat Is Harmful?", "date": "2016-07-22", "platform": "赛先生", "hasAbstract": false, "link": "", "zhTag": "健康政策", "enTag": "Health Policy" },
-            { "zhTitle": "大数据告诉你哪些基因参与Ⅱ型糖尿病的遗传", "enTitle": "Genetics of Type 2 Diabetes", "date": "2016-07-21", "platform": "赛先生", "hasAbstract": false, "link": "", "zhTag": "生命科学", "enTag": "Life Science" },
-            { "zhTitle": "肿瘤免疫疗法之 CAR-T 细胞疗法", "enTitle": "CAR-T Cell Therapy Explained", "date": "2016-03-11", "platform": "赛先生", "hasAbstract": false, "link": "", "zhTag": "医疗技术", "enTag": "Medical Technology" }
+            { 
+                "zhTitle": "跨界交叉，颠覆式医疗创新的秘诀？", 
+                "enTitle": "What's the Secret of Cross-Disciplinary Disruptive Medical Innovation?", 
+                "date": "2021-08-11", 
+                "platform": "本草圈", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "产业进展", 
+                "enTag": "Industry Progress" 
+            },
+            { 
+                "zhTitle": "化学防晒剂会进入血液，夏季如何安全防晒？", 
+                "enTitle": "Chemical Sunscreens Enter the Bloodstream: How to Sunbathe Safely in Summer?", 
+                "date": "2020-05-18", 
+                "platform": "健康学人", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "王辰团队详解：武汉16家方舱医院的作用", 
+                "enTitle": "Team Wang Chen Explains: The Role of 16 Fangcang Hospitals in Wuhan", 
+                "date": "2020-04-22", 
+                "platform": "知识分子", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "武汉为全球防疫提供了哪些宝贵经验？", 
+                "enTitle": "What Precious Lessons Has Wuhan Provided for Global Pandemic Prevention?", 
+                "date": "2020-04-12", 
+                "platform": "知识分子", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "出院复阳难题，也许可以试试血清学检测", 
+                "enTitle": "The Dilemma of Post-Discharge Re-Positivity: Serological Testing May Be a Solution", 
+                "date": "2020-03-12", 
+                "platform": "赛先生", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "医疗技术", 
+                "enTag": "Medical Technology" 
+            },
+            { 
+                "zhTitle": "世卫：战胜新冠病毒，哪些科研问题亟待解决？", 
+                "enTitle": "WHO: What Scientific Research Issues Urgently Need to Be Solved to Defeat COVID-19?", 
+                "date": "2020-03-07", 
+                "platform": "健康学人", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "武汉的感染规模预计有多大？", 
+                "enTitle": "What Is the Estimated Infection Scale in Wuhan?", 
+                "date": "2020-02-14", 
+                "platform": "赛先生", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "癌症靶点研究有哪些不靠谱？", 
+                "enTitle": "What Are the Unreliable Aspects in Cancer Target Research?", 
+                "date": "2019-12-02", 
+                "platform": "返朴", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "生命科学", 
+                "enTag": "Life Science" 
+            },
+            { 
+                "zhTitle": "常喝甜饮料或纯果汁需警惕癌症风险升高", 
+                "enTitle": "Regular Consumption of Sugary Drinks or Pure Fruit Juices: Beware of Increased Cancer Risk", 
+                "date": "2019-07-24", 
+                "platform": "知识分子", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "胃肠道病早发现：可吞咽设备的未来", 
+                "enTitle": "Early Detection of Gastrointestinal Diseases: The Future of Swallowable Devices", 
+                "date": "2019-03-27", 
+                "platform": "中国科普博览", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "医疗技术", 
+                "enTag": "Medical Technology" 
+            },
+            { 
+                "zhTitle": "5万人基因外显子组数据全球共享！", 
+                "enTitle": "Global Sharing of Exome Data from 50,000 People!", 
+                "date": "2019-03-18", 
+                "platform": "健康学人", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "生命科学", 
+                "enTag": "Life Science" 
+            },
+            { 
+                "zhTitle": "愈发普遍的食物过敏，你中招了吗？", 
+                "enTitle": "Food Allergies Are Becoming More Prevalent: Are You Affected?", 
+                "date": "2019-03-07", 
+                "platform": "中国科普博览", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "吃坚果有益于糖尿病患者的心脏健康", 
+                "enTitle": "Eating Nuts Is Beneficial to the Heart Health of Diabetic Patients", 
+                "date": "2019-03-01", 
+                "platform": "知识分子", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "中英科学家将抗心律失常药物重新分类", 
+                "enTitle": "Chinese and British Scientists Reclassify Antiarrhythmic Drugs", 
+                "date": "2018-10-27", 
+                "platform": "知识分子", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "医疗技术", 
+                "enTag": "Medical Technology" 
+            },
+            { 
+                "zhTitle": "为什么患有过敏性鼻炎的人也易发哮喘？", 
+                "enTitle": "Why Are People with Allergic Rhinitis Also Prone to Asthma?", 
+                "date": "2018-09-16", 
+                "platform": "健康学人", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "生命科学", 
+                "enTag": "Life Science" 
+            },
+            { 
+                "zhTitle": "五千人的研究数据告诉你：男女大脑真不同", 
+                "enTitle": "Research Data from 5,000 People Shows: Male and Female Brains Are Truly Different", 
+                "date": "2018-08-17", 
+                "platform": "健康学人", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "生命科学", 
+                "enTag": "Life Science" 
+            },
+            { 
+                "zhTitle": "想要拥有彭于晏同款肌肉？膳食蛋白要足够", 
+                "enTitle": "Want Muscles Like Eddie Peng? Sufficient Dietary Protein Is a Must", 
+                "date": "2018-07-19", 
+                "platform": "健康学人", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "哪些生活习惯可让糖尿病患者获益？", 
+                "enTitle": "Which Living Habits Can Benefit Diabetic Patients?", 
+                "date": "2018-06-18", 
+                "platform": "知识分子", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "哪种饮食方式最健康：地中海饮食夺冠", 
+                "enTitle": "Which Diet Is the Healthiest? The Mediterranean Diet Takes the Crown", 
+                "date": "2018-01-14", 
+                "platform": "知识分子", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "近千种食物营养排名，猪油排第八？", 
+                "enTitle": "Nutritional Ranking of Nearly 1,000 Foods: Lard Ranks Eighth?", 
+                "date": "2018-04-13", 
+                "platform": "知识分子", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "少肥肉或少主食，哪个更减肥？", 
+                "enTitle": "Less Fatty Meat or Less Staple Food: Which Is Better for Weight Loss?", 
+                "date": "2018-03-17", 
+                "platform": "知识分子", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "中国克隆猕猴今天登上 Cell 和各大头条", 
+                "enTitle": "Chinese Cloned Macaques Make the Cover of Cell and Headlines Today", 
+                "date": "2018-01-25", 
+                "platform": "知社学术圈", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "生命科学", 
+                "enTag": "Life Science" 
+            },
+            { 
+                "zhTitle": "受孕前父母的饮食和生活方式关乎子女健康", 
+                "enTitle": "Parents' Diet and Lifestyle Before Conception Are Related to Children's Health", 
+                "date": "2018-04-18", 
+                "platform": "知社学术圈", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "贪杯影响预期寿命，合适的饮酒量是多少？", 
+                "enTitle": "Excessive Drinking Affects Life Expectancy: What Is a Proper Alcohol Intake?", 
+                "date": "2018-04-13", 
+                "platform": "知社学术圈", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "中国学者揭示衰老的遗传基础", 
+                "enTitle": "Chinese Scholars Reveal the Genetic Basis of Aging", 
+                "date": "2017-11-09", 
+                "platform": "知社学术圈", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "生命科学", 
+                "enTag": "Life Science" 
+            },
+            { 
+                "zhTitle": "多吃蔬果无益，高脂膳食更健康？", 
+                "enTitle": "Eating More Fruits and Vegetables Is Useless, and a High-Fat Diet Is Healthier?", 
+                "date": "2017-09-05", 
+                "platform": "知识分子", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "不要打扰睡着的婴儿，他们正在“学习”", 
+                "enTitle": "Don't Disturb Sleeping Babies—They Are \"Learning\"", 
+                "date": "2017-08-30", 
+                "platform": "知识分子", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "生命科学", 
+                "enTag": "Life Science" 
+            },
+            { 
+                "zhTitle": "RNA好累：可编码的“非编码RNA”", 
+                "enTitle": "RNA Is Exhausted: The Coding \"Non-Coding RNA\"", 
+                "date": "2016-11-01", 
+                "platform": "赛先生", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "生命科学", 
+                "enTag": "Life Science" 
+            },
+            { 
+                "zhTitle": "专访浙江大学王志萍、郭行夫妇", 
+                "enTitle": "Exclusive Interview: Wang Zhiping and Guo Hang, a Couple from Zhejiang University", 
+                "date": "2016-08-06", 
+                "platform": "赛先生", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "行业访谈", 
+                "enTag": "Industry Interview" 
+            },
+            { 
+                "zhTitle": "专访 Cell Research 常务副主编李党生", 
+                "enTitle": "Exclusive Interview: Li Dangsheng, Executive Deputy Editor-in-Chief of Cell Research", 
+                "date": "2016-08-05", 
+                "platform": "赛先生", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "行业访谈", 
+                "enTag": "Industry Interview" 
+            },
+            { 
+                "zhTitle": "到底哪一类脂肪对你有害？", 
+                "enTitle": "Which Type of Fat Is Actually Harmful to You?", 
+                "date": "2016-07-22", 
+                "platform": "赛先生", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "健康政策", 
+                "enTag": "Health Policy" 
+            },
+            { 
+                "zhTitle": "大数据告诉你哪些基因参与Ⅱ型糖尿病的遗传", 
+                "enTitle": "Big Data Tells You Which Genes Are Involved in the Heredity of Type 2 Diabetes", 
+                "date": "2016-07-21", 
+                "platform": "赛先生", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "生命科学", 
+                "enTag": "Life Science" 
+            },
+            { 
+                "zhTitle": "肿瘤免疫疗法之 CAR-T 细胞疗法", 
+                "enTitle": "CAR-T Cell Therapy: A Type of Tumor Immunotherapy", 
+                "date": "2016-03-11", 
+                "platform": "赛先生", 
+                "hasAbstract": false, 
+                "link": "", 
+                "zhTag": "医疗技术", 
+                "enTag": "Medical Technology" 
+            }
         ];
 
         const langData = {
