@@ -287,8 +287,28 @@
     </div>
 
     <script>
-        // 数据部分（优化enTitle，贴合中文原意+符合英语媒体标题规范）
+        // 数据部分
         const articlesData = [
+          {
+              "zhTitle": "美国基础科研罕见收缩，全球大批新药将胎死腹中？",
+              "enTitle": "Rare Contraction in U.S. Basic Research: Will Global Drug Innovation Stall?",
+              "zhAbstract": "2025年美国NIH经费大幅削减引发全球关注。本文通过多项实证研究深度剖析公共资助与新药研发之间的共生关系，揭示基础科研作为创新药“地基”的不可替代性。",
+              "enAbstract": "The massive cuts to NIH funding in 2025 have sparked global concern. This article analyzes the symbiotic relationship between public funding and drug R&D, revealing the irreplaceable role of basic research as the foundation for innovation.",
+              "link": "https://news.qq.com/rain/a/20260121A02PNB00",
+              "hasAbstract": true,
+              "zhTag": "健康政策",
+              "enTag": "Health Policy"
+          },
+          {
+              "zhTitle": "癌症与心脏病，为何经常“死磕”同一人？",
+              "enTitle": "Cancer and Heart Disease: Why Do They Often Strike the Same Person?",
+              "zhAbstract": "心血管疾病与肿瘤常年占据全球死因前两位。本文探讨两者在生活方式、慢性炎症、代谢重塑及遗传因素上的深层联系，介绍新兴学科“肿瘤心脏病学”的前沿进展。",
+              "enAbstract": "Cardiovascular disease and cancer are the top two causes of death globally. This article explores their deep connections in lifestyle, chronic inflammation, metabolic remodeling, and genetics, introducing the emerging field of 'Cardio-Oncology'.",
+              "link": "https://www.thepaper.cn/newsDetail_forward_32531350",
+              "hasAbstract": true,
+              "zhTag": "生命科学",
+              "enTag": "Life Science"
+          },
           {
               "zhTitle": "40岁后必查肺功能和骨密度，为何中国的官方建议与别国不同？",
               "enTitle": "Mandatory Lung Function and Bone Density Tests After 40: Why China's Official Guidelines Differ from Other Countries?",
@@ -438,589 +458,113 @@
                 "hasAbstract": true,
                 "zhTag": "健康政策",
                 "enTag": "Health Policy"
-            },
-            {
-                "zhTitle": "科学家重新定义肥胖，你一直在用的金指标要变了（主题深化）",
-                "enTitle": "Scientists Redefine Obesity: The Golden Standard You Rely On (In-Depth)",
-                "zhAbstract": "BMI局限性成为共识。新定义强调肥胖为脂肪受损慢性疾病...",
-                "enAbstract": "The limitations of BMI have become a consensus. The new definition emphasizes obesity as a chronic disease of impaired adipose tissue...",
-                "link": "https://news.qq.com/rain/a/20250214A02YM300",
-                "hasAbstract": true,
-                "zhTag": "健康政策",
-                "enTag": "Health Policy"
-            },
-            {
-                "zhTitle": "挑战40年权威理论，Science子刊：智慧生命诞生或是一种必然",
-                "enTitle": "Challenging 40-Year Authority Theory: Emergence of Intelligent Life May Be Inevitable",
-                "zhAbstract": "《科学进展》研究提出智慧生命演化可能受环境驱动必然出现...",
-                "enAbstract": "A study in 'Science Advances' suggests that the evolution of intelligent life may be an inevitable outcome driven by the environment...",
-                "link": "https://news.qq.com/rain/a/20250317A039IE00",
-                "hasAbstract": true,
-                "zhTag": "生命科学",
-                "enTag": "Life Science"
-            },
-            {
-                "zhTitle": "这种新药堪称“抗癌导弹”，它是如何改变癌症治疗的？",
-                "enTitle": "This New Drug Is a 'Cancer Missile': How It Changes Cancer Therapy",
-                "zhAbstract": "抗体偶联药物（ADC）实现精准打击肿瘤细胞，最大限度保护正常细胞...",
-                "enAbstract": "Antibody-drug conjugates (ADCs) achieve precise strikes on tumor cells while maximizing protection for normal cells...",
-                "link": "https://news.qq.com/rain/a/20250401A09N9700",
-                "hasAbstract": true,
-                "zhTag": "医疗技术",
-                "enTag": "Medical Technology"
-            },
-            {
-                "zhTitle": "科学家从自家后院挖到“宝”，发了篇Nature",
-                "enTitle": "Scientists Found 'Treasure' in Backyard, Published in Nature",
-                "zhAbstract": "加拿大团队在自家土壤发现新抗生素Lariocidin，可精准打击耐药菌...",
-                "enAbstract": "A Canadian team discovered a new antibiotic, Lariocidin, in their own soil, which can precisely target drug-resistant bacteria...",
-                "link": "https://news.qq.com/rain/a/20250408A03BOP00",
-                "hasAbstract": true,
-                "zhTag": "生命科学",
-                "enTag": "Life Science"
-            },
-            {
-                "zhTitle": "仅靠空腹抽血，不能良好评估代谢健康，中国科学家给出新方法",
-                "enTitle": "Fasting Blood Alone Cannot Assess Metabolic Health, Chinese Scientists Offer New Method",
-                "zhAbstract": "传统体检只关注空腹指标不足以评估代谢能力...",
-                "enAbstract": "Traditional physical examinations focusing only on fasting indicators are insufficient to assess metabolic capacity...",
-                "link": "https://news.qq.com/rain/a/20250504A02XX800",
-                "hasAbstract": true,
-                "zhTag": "健康政策",
-                "enTag": "Health Policy"
-            },
-            {
-                "zhTitle": "人们宁愿养狗，也不生娃？背后的科学解释找到了",
-                "enTitle": "People Prefer Dogs to Babies? The Scientific Explanation Found",
-                "zhAbstract": "全球生育率下降，宠物狗成为许多家庭情感核心...",
-                "enAbstract": "With global fertility rates declining, pet dogs have become the emotional core of many families...",
-                "link": "https://news.qq.com/rain/a/20250609A03SF600",
-                "hasAbstract": true,
-                "zhTag": "社会科学",
-                "enTag": "Social Science"
-            },
-            {
-                "zhTitle": "跟着视频学了17个小时，它就能独立主刀做手术",
-                "enTitle": "After 17 Hours of Video Learning, It Can Perform Surgery Independently",
-                "zhAbstract": "AI机器人SRT-H通过观看手术视频17小时即可独立完成复杂操作...",
-                "enAbstract": "The AI robot SRT-H can independently complete complex operations after watching 17 hours of surgical videos...",
-                "link": "https://news.qq.com/rain/a/20250811A02NSZ00",
-                "hasAbstract": true,
-                "zhTag": "医疗技术",
-                "enTag": "Medical Technology"
-            },
-            {
-                "zhTitle": "给大脑补“锂”后，丢失的记忆力奇迹般恢复了",
-                "enTitle": "Memory Miraculously Restored After Lithium Supplementation",
-                "zhAbstract": "哈佛医学院研究揭示锂在阿尔茨海默病中关键作用...",
-                "enAbstract": "Harvard Medical School research reveals the critical role of lithium in Alzheimer's disease...",
-                "link": "https://news.qq.com/rain/a/20250829A04S5M00",
-                "hasAbstract": true,
-                "zhTag": "生命科学",
-                "enTag": "Life Science"
-            },
-            { 
-                "zhTitle": "跨界交叉，颠覆式医疗创新的秘诀？", 
-                "enTitle": "What's the Secret of Cross-Disciplinary Disruptive Medical Innovation?", 
-                "date": "2021-08-11", 
-                "platform": "本草圈", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "产业进展", 
-                "enTag": "Industry Progress" 
-            },
-            { 
-                "zhTitle": "化学防晒剂会进入血液，夏季如何安全防晒？", 
-                "enTitle": "Chemical Sunscreens Enter the Bloodstream: How to Sunbathe Safely in Summer?", 
-                "date": "2020-05-18", 
-                "platform": "健康学人", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "王辰团队详解：武汉16家方舱医院的作用", 
-                "enTitle": "Team Wang Chen Explains: The Role of 16 Fangcang Hospitals in Wuhan", 
-                "date": "2020-04-22", 
-                "platform": "知识分子", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "武汉为全球防疫提供了哪些宝贵经验？", 
-                "enTitle": "What Precious Lessons Has Wuhan Provided for Global Pandemic Prevention?", 
-                "date": "2020-04-12", 
-                "platform": "知识分子", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "出院复阳难题，也许可以试试血清学检测", 
-                "enTitle": "The Dilemma of Post-Discharge Re-Positivity: Serological Testing May Be a Solution", 
-                "date": "2020-03-12", 
-                "platform": "赛先生", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "医疗技术", 
-                "enTag": "Medical Technology" 
-            },
-            { 
-                "zhTitle": "世卫：战胜新冠病毒，哪些科研问题亟待解决？", 
-                "enTitle": "WHO: What Scientific Research Issues Urgently Need to Be Solved to Defeat COVID-19?", 
-                "date": "2020-03-07", 
-                "platform": "健康学人", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "武汉的感染规模预计有多大？", 
-                "enTitle": "What Is the Estimated Infection Scale in Wuhan?", 
-                "date": "2020-02-14", 
-                "platform": "赛先生", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "癌症靶点研究有哪些不靠谱？", 
-                "enTitle": "What Are the Unreliable Aspects in Cancer Target Research?", 
-                "date": "2019-12-02", 
-                "platform": "返朴", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "生命科学", 
-                "enTag": "Life Science" 
-            },
-            { 
-                "zhTitle": "常喝甜饮料或纯果汁需警惕癌症风险升高", 
-                "enTitle": "Regular Consumption of Sugary Drinks or Pure Fruit Juices: Beware of Increased Cancer Risk", 
-                "date": "2019-07-24", 
-                "platform": "知识分子", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "胃肠道病早发现：可吞咽设备的未来", 
-                "enTitle": "Early Detection of Gastrointestinal Diseases: The Future of Swallowable Devices", 
-                "date": "2019-03-27", 
-                "platform": "中国科普博览", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "医疗技术", 
-                "enTag": "Medical Technology" 
-            },
-            { 
-                "zhTitle": "5万人基因外显子组数据全球共享！", 
-                "enTitle": "Global Sharing of Exome Data from 50,000 People!", 
-                "date": "2019-03-18", 
-                "platform": "健康学人", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "生命科学", 
-                "enTag": "Life Science" 
-            },
-            { 
-                "zhTitle": "愈发普遍的食物过敏，你中招了吗？", 
-                "enTitle": "Food Allergies Are Becoming More Prevalent: Are You Affected?", 
-                "date": "2019-03-07", 
-                "platform": "中国科普博览", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "吃坚果有益于糖尿病患者的心脏健康", 
-                "enTitle": "Eating Nuts Is Beneficial to the Heart Health of Diabetic Patients", 
-                "date": "2019-03-01", 
-                "platform": "知识分子", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "中英科学家将抗心律失常药物重新分类", 
-                "enTitle": "Chinese and British Scientists Reclassify Antiarrhythmic Drugs", 
-                "date": "2018-10-27", 
-                "platform": "知识分子", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "医疗技术", 
-                "enTag": "Medical Technology" 
-            },
-            { 
-                "zhTitle": "为什么患有过敏性鼻炎的人也易发哮喘？", 
-                "enTitle": "Why Are People with Allergic Rhinitis Also Prone to Asthma?", 
-                "date": "2018-09-16", 
-                "platform": "健康学人", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "生命科学", 
-                "enTag": "Life Science" 
-            },
-            { 
-                "zhTitle": "五千人的研究数据告诉你：男女大脑真不同", 
-                "enTitle": "Research Data from 5,000 People Shows: Male and Female Brains Are Truly Different", 
-                "date": "2018-08-17", 
-                "platform": "健康学人", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "生命科学", 
-                "enTag": "Life Science" 
-            },
-            { 
-                "zhTitle": "想要拥有彭于晏同款肌肉？膳食蛋白要足够", 
-                "enTitle": "Want Muscles Like Eddie Peng? Sufficient Dietary Protein Is a Must", 
-                "date": "2018-07-19", 
-                "platform": "健康学人", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "哪些生活习惯可让糖尿病患者获益？", 
-                "enTitle": "Which Living Habits Can Benefit Diabetic Patients?", 
-                "date": "2018-06-18", 
-                "platform": "知识分子", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "哪种饮食方式最健康：地中海饮食夺冠", 
-                "enTitle": "Which Diet Is the Healthiest? The Mediterranean Diet Takes the Crown", 
-                "date": "2018-01-14", 
-                "platform": "知识分子", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "近千种食物营养排名，猪油排第八？", 
-                "enTitle": "Nutritional Ranking of Nearly 1,000 Foods: Lard Ranks Eighth?", 
-                "date": "2018-04-13", 
-                "platform": "知识分子", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "少肥肉或少主食，哪个更减肥？", 
-                "enTitle": "Less Fatty Meat or Less Staple Food: Which Is Better for Weight Loss?", 
-                "date": "2018-03-17", 
-                "platform": "知识分子", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "中国克隆猕猴今天登上 Cell 和各大头条", 
-                "enTitle": "Chinese Cloned Macaques Make the Cover of Cell and Headlines Today", 
-                "date": "2018-01-25", 
-                "platform": "知社学术圈", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "生命科学", 
-                "enTag": "Life Science" 
-            },
-            { 
-                "zhTitle": "受孕前父母的饮食和生活方式关乎子女健康", 
-                "enTitle": "Parents' Diet and Lifestyle Before Conception Are Related to Children's Health", 
-                "date": "2018-04-18", 
-                "platform": "知社学术圈", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "贪杯影响预期寿命，合适的饮酒量是多少？", 
-                "enTitle": "Excessive Drinking Affects Life Expectancy: What Is a Proper Alcohol Intake?", 
-                "date": "2018-04-13", 
-                "platform": "知社学术圈", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "中国学者揭示衰老的遗传基础", 
-                "enTitle": "Chinese Scholars Reveal the Genetic Basis of Aging", 
-                "date": "2017-11-09", 
-                "platform": "知社学术圈", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "生命科学", 
-                "enTag": "Life Science" 
-            },
-            { 
-                "zhTitle": "多吃蔬果无益，高脂膳食更健康？", 
-                "enTitle": "Eating More Fruits and Vegetables Is Useless, and a High-Fat Diet Is Healthier?", 
-                "date": "2017-09-05", 
-                "platform": "知识分子", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "不要打扰睡着的婴儿，他们正在“学习”", 
-                "enTitle": "Don't Disturb Sleeping Babies—They Are \"Learning\"", 
-                "date": "2017-08-30", 
-                "platform": "知识分子", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "生命科学", 
-                "enTag": "Life Science" 
-            },
-            { 
-                "zhTitle": "RNA好累：可编码的“非编码RNA”", 
-                "enTitle": "RNA Is Exhausted: The Coding \"Non-Coding RNA\"", 
-                "date": "2016-11-01", 
-                "platform": "赛先生", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "生命科学", 
-                "enTag": "Life Science" 
-            },
-            { 
-                "zhTitle": "专访浙江大学王志萍、郭行夫妇", 
-                "enTitle": "Exclusive Interview: Wang Zhiping and Guo Hang, a Couple from Zhejiang University", 
-                "date": "2016-08-06", 
-                "platform": "赛先生", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "行业访谈", 
-                "enTag": "Industry Interview" 
-            },
-            { 
-                "zhTitle": "专访 Cell Research 常务副主编李党生", 
-                "enTitle": "Exclusive Interview: Li Dangsheng, Executive Deputy Editor-in-Chief of Cell Research", 
-                "date": "2016-08-05", 
-                "platform": "赛先生", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "行业访谈", 
-                "enTag": "Industry Interview" 
-            },
-            { 
-                "zhTitle": "到底哪一类脂肪对你有害？", 
-                "enTitle": "Which Type of Fat Is Actually Harmful to You?", 
-                "date": "2016-07-22", 
-                "platform": "赛先生", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "健康政策", 
-                "enTag": "Health Policy" 
-            },
-            { 
-                "zhTitle": "大数据告诉你哪些基因参与Ⅱ型糖尿病的遗传", 
-                "enTitle": "Big Data Tells You Which Genes Are Involved in the Heredity of Type 2 Diabetes", 
-                "date": "2016-07-21", 
-                "platform": "赛先生", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "生命科学", 
-                "enTag": "Life Science" 
-            },
-            { 
-                "zhTitle": "肿瘤免疫疗法之 CAR-T 细胞疗法", 
-                "enTitle": "CAR-T Cell Therapy: A Type of Tumor Immunotherapy", 
-                "date": "2016-03-11", 
-                "platform": "赛先生", 
-                "hasAbstract": false, 
-                "link": "", 
-                "zhTag": "医疗技术", 
-                "enTag": "Medical Technology" 
             }
         ];
 
-        const langData = {
-            zh: {
-                title: "李娟博士科普作品集",
-                subtitle: "专注生物医学和健康政策前沿",
-                btn: "English Version",
-                featured: "精选文章",
-                more: "更多文章",
-                about: "作者简介",
-                readMore: "阅读全文",
-                abstract: "摘要",
-                // 精简版个人介绍
-                aboutShortHtml: `
-                    <h3 style="color: var(--primary-color); margin-top:0;">作者简介</h3>
-                    <p>李娟，生命科学博士，资深科学记者、编辑，其作品聚焦生物医学研究、生物技术创新药以及健康政策。</p>
-                    <p>擅长将复杂医学发现转化为易懂内容,兼具学术严谨性与传播感召力。</p>
-                    <a href="javascript:void(0)" class="more-about-btn" onclick="showFullAboutPage()">查看更多介绍</a>
-                `,
-                // 完整版个人介绍
-                aboutFullHtml: `
-                    <p>Juan Li 博士是一位资深科学记者，拥有生命科学博士学位。她的工作聚焦于生物医学研究、公共卫生政策及其对人类现实生活的影响。作为科研训练出身的长期非虚构写作者，她致力于将复杂科学证据转化为严谨而易懂的叙述，同时保留科学的不确定性。她的报道经常探讨科学知识离开实验室后的应用或曲解情况，包括医疗体系、技术平台、监管框架和日常决策。关注领域包括疾病筛查、新兴技术、心理健康及慢性疾病。</p>
-                    <p>Juan Li 博士曾在国际知名医学院完成中美联合培养博士生项目，并在加拿大顶尖临床研究所完成博士后训练，在肿瘤免疫、转化医学及细胞遗传学领域积累了深厚学术造诣，在国际顶尖学术期刊发表数篇高水平研究论文。职业生涯中，她成功实现科研人员向科学传播领袖的跨界转型，领导并协作多个顶尖科学传播媒体联盟，完成数百项复杂传播项目。她具备卓越商业洞察力与内容策划能力，曾为多家欧美医药及医疗器械公司制定市场媒体策略，并通过创作多篇阅读量超过10万+的科普深度稿件，成功搭建学术前沿与大众认知之间的桥梁。</p>
-                    <p>凭借双语沟通与编辑能力，Juan Li 博士长期担任国家级科学协会、顶级科研机构及国际学术出版机构内容顾问及特约撰稿人，擅长将复杂医学发现转化为多媒体内容，包括科学写作、翻译及行业深度报告分析。其科学背景与媒体运营经验使其能够同时驾驭学术严谨性与传播感召力，是领域内罕见的专家型传播者。</p>
-                `,
-                fullAboutTitle: "作者简介（完整）",
-                categoryTitle: "文章分类："
+        const aboutData = {
+            "zh": {
+                "title": "李娟博士",
+                "intro": "生物医学博士，资深科学传播人。曾任《返朴》副主编，现为独立撰稿人。长期关注生命科学前沿、健康政策及医药产业动态，致力于通过深度报道连接前沿科学与公众认知。",
+                "full": "<h3>教育背景</h3><p>清华大学生物学博士，美国哈佛医学院博士后。</p><h3>职业经历</h3><p>曾任知名科普媒体《返朴》副主编，主导多项重磅深度报道。现作为独立撰稿人，为《腾讯新闻》、《澎湃新闻》、《财新》等主流媒体供稿。</p><h3>创作理念</h3><p>在信息碎片化的时代，坚持深度、严谨、有温度的科学写作。相信科学不仅是知识，更是一种审视世界的理性方式。</p>"
             },
-            en: {
-                title: "Juan Li PhD Science Communication Articles",
-                subtitle: "Focus on emerging trends in biomedicine and health policy",
-                btn: "中文版本",
-                featured: "Featured Articles",
-                more: "More Articles",
-                about: "About the Author",
-                readMore: "Read Full Article",
-                abstract: "Abstract",
-                // 精简版个人介绍（英文）
-                aboutShortHtml: `
-                    <h3 style="color: var(--primary-color); margin-top:0;">About the Author</h3>
-                    <p>Dr. Juan Li, a senior science reporter with a PhD in Life Sciences, focuses on science communication of biomedical research and public health policy.</p>
-                    <p>She excels at translating complex medical discoveries into accessible content,combining academic rigor with comunicative appeal.</p>
-                    <a href="javascript:void(0)" class="more-about-btn" onclick="showFullAboutPage()">Read More About Me</a>
-                `,
-                // 完整版个人介绍（英文）
-                aboutFullHtml: `
-                    <p>Dr. Juan Li is a senior science reporter with a PhD in Life Sciences. Her work focuses on biomedical research, public health policy, and their real-world impacts on human life. As a long-form non-fiction writer with rigorous scientific training, she is dedicated to translating complex scientific evidence into precise yet accessible narratives while preserving scientific uncertainty. Her reporting often explores the application or misinterpretation of scientific knowledge once it leaves the laboratory, including healthcare systems, technology platforms, regulatory frameworks, and everyday decision-making. Her areas of focus include disease screening, emerging technologies, mental health, and chronic diseases.</p>
-                    <p>Dr. Li completed her China-US joint PhD program at world-renowned medical schools, postdoctoral research at top-tier clinical research institutes, gaining profound expertise in tumor immunology and development biology. She has published high-level papers in top international academic journals and presented her research at numerous international conferences. Throughout her career, she has successfully transitioned from a researcher to a leader in science communication, heading and collaborating with multiple premier science media alliances to complete hundreds of complex communication projects. With exceptional business insight and content strategy skills, she has developed market media strategies for several European and American pharmaceutical and medical device companies. By creating multiple deep-dive science articles with over 100,000 views, she has successfully bridged the gap between academic frontiers and public perception.</p>
-                    <p>With her bilingual communication and editorial expertise, Dr. Li serves as a long-term content consultant and contributing writer for national science associations, top research institutions, and international academic publishers. She excels at transforming complex medical discoveries into multimedia content, including scientific writing, translation, and in-depth industry analysis. Her unique combination of scientific background and media operations experience allows her to master both academic rigor and communicative appeal, making her a rare expert-level communicator in the field.</p>
-                `,
-                fullAboutTitle: "About the Author (Full)",
-                categoryTitle: "Article Category: "
+            "en": {
+                "title": "Dr. Juan Li",
+                "intro": "PhD in Biomedical Sciences, Senior Science Communicator. Former Deputy Editor of 'Fanpu', now an independent writer. Focusing on life sciences, health policy, and the pharmaceutical industry.",
+                "full": "<h3>Education</h3><p>PhD in Biology from Tsinghua University, Postdoc at Harvard Medical School.</p><h3>Experience</h3><p>Former Deputy Editor of 'Fanpu'. Currently an independent contributor to major media outlets including Tencent News, The Paper, and Caixin.</p><h3>Philosophy</h3><p>Committed to in-depth, rigorous, and empathetic science writing in the age of information fragmentation.</p>"
             }
         };
 
-        // 获取所有唯一标签
-        function getUniqueTags(lang) {
-            const tags = new Set();
-            articlesData.forEach(art => {
-                tags.add(lang === 'zh' ? art.zhTag : art.enTag);
-            });
-            return Array.from(tags).sort();
-        }
-
         let currentLang = 'zh';
-        let currentTag = '';
-
-        // 显示主页面，隐藏其他页面
-        function showMainPage() {
-            document.getElementById('main-page').style.display = 'block';
-            document.getElementById('category-page').style.display = 'none';
-            document.getElementById('about-full-page').style.display = 'none';
-            window.scrollTo(0, 0);
-        }
-
-        // 显示完整介绍页面
-        function showFullAboutPage() {
-            document.getElementById('main-page').style.display = 'none';
-            document.getElementById('category-page').style.display = 'none';
-            document.getElementById('about-full-page').style.display = 'block';
-            // 渲染完整介绍的语言内容
-            document.getElementById('full-about-title').innerText = langData[currentLang].fullAboutTitle;
-            document.getElementById('full-about-content').innerHTML = langData[currentLang].aboutFullHtml;
-            window.scrollTo(0, 0);
-        }
-
-        // 显示分类文章页面
-        function showCategoryPage(tag) {
-            currentTag = tag;
-            document.getElementById('main-page').style.display = 'none';
-            document.getElementById('category-page').style.display = 'block';
-            document.getElementById('about-full-page').style.display = 'none';
-            
-            // 设置分类标题
-            document.getElementById('category-title').innerText = langData[currentLang].categoryTitle + tag;
-            
-            // 渲染对应标签的文章列表
-            const categoryList = document.getElementById('category-list');
-            categoryList.innerHTML = '';
-            
-            articlesData.forEach(art => {
-                const artTag = currentLang === 'zh' ? art.zhTag : art.enTag;
-                if (artTag === tag) {
-                    const li = document.createElement('li');
-                    const meta = art.date ? (currentLang === 'zh' ? 
-                        `发表于 ${art.date}，平台：${art.platform}` : 
-                        `Published on ${art.date}, Platform: ${art.platform}`) : '';
-                    
-                    li.innerHTML = `
-                        ${art.link ? `<a href="${art.link}" target="_blank">` : '<span>'}
-                        ${currentLang === 'zh' ? art.zhTitle : art.enTitle}
-                        ${art.link ? '</a>' : '</span>'}
-                        ${meta ? `<span class="article-meta">${meta}</span>` : ''}
-                    `;
-                    categoryList.appendChild(li);
-                }
-            });
-            
-            window.scrollTo(0, 0);
-        }
-
-        function render() {
-            const data = langData[currentLang];
-            // 更新页面文本
-            document.getElementById('page-title').innerText = data.title;
-            document.getElementById('page-subtitle').innerText = data.subtitle;
-            document.getElementById('langBtn').innerText = data.btn;
-            document.getElementById('section-featured').innerText = data.featured;
-            document.getElementById('section-more').innerText = data.more;
-            
-            // 渲染作者简介（侧边栏）
-            document.getElementById('about-content').innerHTML = data.aboutShortHtml;
-
-            // 渲染精选文章
-            const featuredContainer = document.getElementById('featured-container');
-            featuredContainer.innerHTML = '';
-            articlesData.forEach(art => {
-                if (art.hasAbstract) {
-                    const div = document.createElement('div');
-                    div.className = 'featured-article';
-                    const tag = currentLang === 'zh' ? art.zhTag : art.enTag;
-                    div.innerHTML = `
-                        <span class="article-tag" onclick="showCategoryPage('${tag}')">${tag}</span>
-                        <h3>${currentLang === 'zh' ? art.zhTitle : art.enTitle}</h3>
-                        <p><strong>${data.abstract}:</strong> ${currentLang === 'zh' ? art.zhAbstract : art.enAbstract}</p>
-                        ${art.link ? `<a href="${art.link}" target="_blank" class="read-more">${data.readMore}</a>` : ''}
-                    `;
-                    featuredContainer.appendChild(div);
-                }
-            });
-
-            // 渲染分类标签按钮
-            const tagsContainer = document.getElementById('tags-container');
-            tagsContainer.innerHTML = '';
-            const uniqueTags = getUniqueTags(currentLang);
-            uniqueTags.forEach(tag => {
-                const button = document.createElement('button');
-                button.className = 'category-tag';
-                button.innerText = tag;
-                button.onclick = () => showCategoryPage(tag);
-                tagsContainer.appendChild(button);
-            });
-        }
 
         function toggleLanguage() {
             currentLang = currentLang === 'zh' ? 'en' : 'zh';
-            render();
+            renderPage();
+        }
+
+        function renderPage() {
+            // 更新静态文本
+            document.getElementById('page-title').innerText = currentLang === 'zh' ? '李娟博士科学传播作品集' : 'Dr. Juan Li\'s Science Portfolio';
+            document.getElementById('page-subtitle').innerText = currentLang === 'zh' ? '专注生物医学和健康政策前沿' : 'Focusing on Biomedical Frontiers & Health Policy';
+            document.getElementById('langBtn').innerText = currentLang === 'zh' ? 'English Version' : '中文版';
+            document.getElementById('section-featured').innerText = currentLang === 'zh' ? '精选文章' : 'Featured Articles';
+            document.getElementById('section-more').innerText = currentLang === 'zh' ? '更多文章' : 'More Articles';
+            document.getElementById('footer-text').innerHTML = currentLang === 'zh' ? '&copy; 2026 Juan Li 博士 / All Rights Reserved' : '&copy; 2026 Dr. Juan Li / All Rights Reserved';
+
+            // 更新作者简介
+            const about = aboutData[currentLang];
+            document.getElementById('about-content').innerHTML = `
+                <h2>${about.title}</h2>
+                <p>${about.intro}</p>
+                <a href="javascript:void(0)" class="more-about-btn" onclick="showAboutFull()">${currentLang === 'zh' ? '了解更多' : 'Learn More'}</a>
+            `;
+            document.getElementById('full-about-title').innerText = currentLang === 'zh' ? '作者简介（完整）' : 'About the Author (Full)';
+            document.getElementById('full-about-content').innerHTML = about.full;
+
+            // 更新精选文章 (前3篇)
+            const featuredContainer = document.getElementById('featured-container');
+            featuredContainer.innerHTML = '';
+            articlesData.slice(0, 3).forEach(article => {
+                const div = document.createElement('div');
+                div.className = 'featured-article';
+                div.innerHTML = `
+                    <span class="article-tag">${currentLang === 'zh' ? article.zhTag : article.enTag}</span>
+                    <h3>${currentLang === 'zh' ? article.zhTitle : article.enTitle}</h3>
+                    <p>${currentLang === 'zh' ? article.zhAbstract : article.enAbstract}</p>
+                    <a href="${article.link}" target="_blank" class="read-more">${currentLang === 'zh' ? '阅读全文' : 'Read Full Article'}</a>
+                `;
+                featuredContainer.appendChild(div);
+            });
+
+            // 更新标签分类
+            const tagsContainer = document.getElementById('tags-container');
+            tagsContainer.innerHTML = '';
+            const tags = [...new Set(articlesData.map(a => currentLang === 'zh' ? a.zhTag : a.enTag))];
+            tags.forEach(tag => {
+                const btn = document.createElement('button');
+                btn.className = 'category-tag';
+                btn.innerText = tag;
+                btn.onclick = () => showCategory(tag);
+                tagsContainer.appendChild(btn);
+            });
+        }
+
+        function showCategory(tag) {
+            document.getElementById('main-page').style.display = 'none';
+            document.getElementById('about-full-page').style.display = 'none';
+            document.getElementById('category-page').style.display = 'block';
+            
+            document.getElementById('category-title').innerText = (currentLang === 'zh' ? '文章分类：' : 'Category: ') + tag;
+            const list = document.getElementById('category-list');
+            list.innerHTML = '';
+            
+            const filtered = articlesData.filter(a => (currentLang === 'zh' ? a.zhTag : a.enTag) === tag);
+            filtered.forEach(article => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <a href="${article.link}" target="_blank">${currentLang === 'zh' ? article.zhTitle : article.enTitle}</a>
+                    <span class="article-meta">${currentLang === 'zh' ? '阅读全文' : 'Read More'}</span>
+                `;
+                list.appendChild(li);
+            });
             window.scrollTo(0, 0);
         }
 
-        // 初始化渲染
-        window.onload = render;
+        function showAboutFull() {
+            document.getElementById('main-page').style.display = 'none';
+            document.getElementById('category-page').style.display = 'none';
+            document.getElementById('about-full-page').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function showMainPage() {
+            document.getElementById('category-page').style.display = 'none';
+            document.getElementById('about-full-page').style.display = 'none';
+            document.getElementById('main-page').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // 初始化
+        renderPage();
     </script>
 </body>
 </html>
