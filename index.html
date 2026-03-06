@@ -32,7 +32,6 @@
         }
         header button:hover { background: #fff; color: var(--secondary-color); }
         
-        /* 主内容布局调整 - 侧边栏+主内容 */
         .main-container {
             max-width: 1200px;
             margin: 40px auto;
@@ -42,7 +41,6 @@
             gap: 30px;
         }
         
-        /* 作者简介侧边栏样式 */
         .author-sidebar {
             background: #f9f9f9;
             padding: 30px;
@@ -53,7 +51,6 @@
             height: fit-content;
         }
         
-        /* 侧边栏分类标签样式 */
         .sidebar-tags {
             margin-top: 25px;
             border-top: 1px solid #eee;
@@ -101,7 +98,6 @@
             box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
             border-top: 4px solid var(--primary-color);
         }
-        /* 分类标签样式 */
         .article-tag {
             display: inline-block;
             padding: 4px 12px;
@@ -131,7 +127,6 @@
         }
         .read-more:hover { opacity: 0.8; }
         
-        /* 标签分类容器样式 */
         .tags-container {
             display: flex;
             flex-wrap: wrap;
@@ -159,7 +154,6 @@
             color: var(--tag-active-text);
         }
         
-        /* 更多文章列表样式 */
         .more-articles-list { 
             list-style: none; 
             padding: 0; 
@@ -187,7 +181,6 @@
             white-space: nowrap; 
         }
 
-        /* 完整文章列表样式（带摘要） */
         .full-articles-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -218,7 +211,6 @@
             margin-top: 10px;
         }
         
-        /* 更多作品列表样式 */
         .additional-works {
             margin-top: 40px;
             padding: 25px;
@@ -262,7 +254,6 @@
             margin-left: 5px;
         }
         
-        /* 更多介绍按钮样式 */
         .more-about-btn {
             display: inline-block;
             margin-top: 15px;
@@ -278,7 +269,6 @@
             background: var(--secondary-color);
         }
         
-        /* 分类页面样式 */
         .category-page {
             max-width: 900px;
             margin: 40px auto;
@@ -299,7 +289,6 @@
             text-decoration: underline;
         }
         
-        /* 完整介绍页面样式 */
         .about-full-page {
             max-width: 900px;
             margin: 40px auto;
@@ -319,7 +308,6 @@
             margin-top: 60px; 
         }
         
-        /* 响应式调整 */
         @media (max-width: 900px) {
             .main-container {
                 grid-template-columns: 1fr;
@@ -343,53 +331,33 @@
         </div>
     </header>
 
-    <!-- 主页面容器 -->
     <div class="main-container" id="main-page">
-        <!-- 左侧边栏：作者简介 + 合作媒体 -->
-        <aside class="author-sidebar" id="about-content">
-            <!-- 动态渲染内容 -->
-        </aside>
+        <aside class="author-sidebar" id="about-content"></aside>
 
-        <!-- 右侧主内容 -->
         <main>
             <h2 id="section-featured">精选文章</h2>
             
-            <!-- 标签分类筛选 -->
-            <div class="tags-container" id="tags-container">
-                <!-- 动态渲染标签 -->
-            </div>
+            <div class="tags-container" id="tags-container"></div>
 
-            <!-- 完整文章列表（带摘要） -->
-            <div class="full-articles-container" id="full-articles-container">
-                <!-- 动态渲染文章卡片 -->
-            </div>
+            <div class="full-articles-container" id="full-articles-container"></div>
 
-            <!-- 更多作品列表 -->
             <div class="additional-works">
                 <h3 id="additional-works-title">更多作品</h3>
-                <ul class="additional-works-list" id="additional-works-list">
-                    <!-- 动态渲染更多作品 -->
-                </ul>
+                <ul class="additional-works-list" id="additional-works-list"></ul>
             </div>
         </main>
     </div>
 
-    <!-- 分类详情页面 -->
     <div class="category-page" id="category-page">
         <a href="javascript:void(0)" class="back-btn" onclick="showMainPage()">← 返回主页</a>
         <h2 id="category-title">分类：</h2>
-        <ul class="more-articles-list" id="category-list">
-            <!-- 动态渲染分类文章 -->
-        </ul>
+        <ul class="more-articles-list" id="category-list"></ul>
     </div>
 
-    <!-- 完整介绍页面 -->
     <div class="about-full-page" id="about-full-page">
         <a href="javascript:void(0)" class="back-btn" onclick="showMainPage()">← 返回主页</a>
         <h2 id="full-about-title">作者简介</h2>
-        <div id="full-about-content">
-            <!-- 动态渲染完整介绍 -->
-        </div>
+        <div id="full-about-content"></div>
     </div>
 
     <footer>
@@ -397,12 +365,35 @@
     </footer>
 
     <script>
-        // 文章数据
         const articlesData = [
+            {
+                "zhTitle": "明明是自己的孩子，却被DNA鉴定否认，科学上如何解释？",
+                "enTitle": "Why DNA Tests Sometimes Deny Biological Parentage of One's Own Child? Scientific Explanations",
+                "zhAbstract": "文章通过多个真实案例，讲述了嵌合体如何挑战现代医学和法律对\"一个人、一套DNA\"的传统认知。研究显示，嵌合体可能导致亲子鉴定异常、器官移植免疫问题以及性别或生殖发育异常。随着基因检测技术的发展，这类现象正在被越来越多地发现。文章指出，嵌合体研究不仅拓展了人类对遗传学的理解，也对医学诊断和法律实践提出新的思考。",
+                "enAbstract": "This article examines how human chimerism challenges the conventional assumption that one person carries a single genetic identity. Drawing on real cases, it illustrates how chimerism can complicate parentage testing, organ transplantation compatibility, and reproductive biology. Advances in genetic testing have revealed that such cases may be more common than previously recognized. The study of chimerism therefore deepens our understanding of human genetics while raising new questions for medicine and law.",
+                "link": "https://www.kepuchina.cn/article/articleinfo?business_type=100&classify=0&ar_id=678995#comment",
+                "hasAbstract": true,
+                "zhTag": "生命科学",
+                "enTag": "Life Science",
+                "date": "2026-03-06",
+                "media": "科普中国"
+            },
+            {
+                "zhTitle": "这支笔是过敏者的"护身符"，但在中国并不易得",
+                "enTitle": "This Pen is a 'Talisman' for Allergy Sufferers, Yet Hard to Access in China",
+                "zhAbstract": "本文回顾了过敏性休克的发现及肾上腺素成为急救药物的科学历程，并介绍了EpiPen自动注射装置的诞生与全球普及。如今，这种\"救命笔\"已成为欧美过敏患者的重要急救工具。文章指出，中国患者长期难以获得类似产品，但相关急救药物的审批正在推进，过敏急救体系有望逐步改善。",
+                "enAbstract": "This article reviews the discovery of anaphylaxis and the development of epinephrine as its life-saving treatment, as well as the invention and global spread of the EpiPen auto-injector. In many Western countries, epinephrine auto-injectors are widely used by people at risk of severe allergies. The article also highlights the limited availability of such tools in mainland China, while noting recent regulatory progress that may improve emergency allergy care.",
+                "link": "https://www.kepuchina.cn/article/articleinfo?business_type=100&classify=0&ar_id=676557#comment",
+                "hasAbstract": true,
+                "zhTag": "健康政策",
+                "enTag": "Health Policy",
+                "date": "2026-03-06",
+                "media": "科普中国"
+            },
             {
                 "zhTitle": "美国基础科研罕见收缩，全球大批新药将胎死腹中？",
                 "enTitle": "Rare Contraction in U.S. Basic Research Threatens Global Drug Pipeline",
-                "zhAbstract": "2025年美国NIH经费大幅削减引发全球关注。本文通过多项实证研究深度剖析公共资助与新药研发之间的共生关系，揭示基础科研作为创新药“地基”的不可替代性。",
+                "zhAbstract": "2025年美国NIH经费大幅削减引发全球关注。本文通过多项实证研究深度剖析公共资助与新药研发之间的共生关系，揭示基础科研作为创新药"地基"的不可替代性。",
                 "enAbstract": "The massive cuts to NIH funding in 2025 have sparked global concern. This article analyzes the symbiotic relationship between public funding and drug R&D, revealing the irreplaceable role of basic research as the foundation for innovation.",
                 "link": "https://news.qq.com/rain/a/20260121A02PNB00",
                 "hasAbstract": true,
@@ -412,9 +403,9 @@
                 "media": "腾讯新闻"
             },
             {
-                "zhTitle": "癌症与心脏病，为何经常“死磕”同一人？",
+                "zhTitle": "癌症与心脏病，为何经常"死磕"同一人？",
                 "enTitle": "Why Cancer and Heart Disease Often Strike the Same Individual",
-                "zhAbstract": "心血管疾病与肿瘤常年占据全球死因前两位。本文探讨两者在生活方式、慢性炎症、代谢重塑及遗传因素上的深层联系，介绍新兴学科“肿瘤心脏病学”的前沿进展。",
+                "zhAbstract": "心血管疾病与肿瘤常年占据全球死因前两位。本文探讨两者在生活方式、慢性炎症、代谢重塑及遗传因素上的深层联系，介绍新兴学科"肿瘤心脏病学"的前沿进展。",
                 "enAbstract": "Cardiovascular disease and cancer are the top two causes of death globally. This article explores their deep connections in lifestyle, chronic inflammation, metabolic remodeling, and genetics, introducing the emerging field of 'Cardio-Oncology'.",
                 "link": "https://www.thepaper.cn/newsDetail_forward_32531350",
                 "hasAbstract": true,
@@ -426,7 +417,7 @@
             {
                 "zhTitle": "40岁后必查肺功能和骨密度，为何中国的官方建议与别国不同？",
                 "enTitle": "Lung Function and Bone Density Tests Mandatory After 40 in China: Why the Policy Divergence",
-                "zhAbstract": "中国2025版体检“新国标”将肺功能与骨密度列为40岁以上必选项，而欧美国家则不建议对无症状人群进行常规筛查。本文深度解读这一政策差异背后的疾病负担与预防医学逻辑。",
+                "zhAbstract": "中国2025版体检"新国标"将肺功能与骨密度列为40岁以上必选项，而欧美国家则不建议对无症状人群进行常规筛查。本文深度解读这一政策差异背后的疾病负担与预防医学逻辑。",
                 "enAbstract": "China's 2025 health examination standards mandate lung function and bone density tests for those over 40. This article explores the logic behind this policy divergence from Western guidelines, focusing on disease burden and preventive medicine.",
                 "link": "https://www.163.com/dy/article/KJ52O4EM05327918.html",
                 "hasAbstract": true,
@@ -436,7 +427,7 @@
                 "media": "网易新闻"
             },
             {
-                "zhTitle": "一起真实案例曝出可怕细节：AI如何两次把人“逼疯”",
+                "zhTitle": "一起真实案例曝出可怕细节：AI如何两次把人"逼疯"",
                 "enTitle": "Chilling Case Study: How AI Triggered Acute Mental Disorders Twice in a Healthcare Worker",
                 "zhAbstract": "本文深入剖析了一起令人震惊的真实案例：一名医护人员在与AI聊天过程中两次陷入急性精神障碍...",
                 "enAbstract": "This article provides an in-depth analysis of a shocking real-life case where a healthcare worker fell into acute mental disorders twice...",
@@ -460,9 +451,9 @@
                 "media": "新浪财经"
             },
             {
-                "zhTitle": "科学家重新定义肥胖，你一直在用的“金指标”要变了",
+                "zhTitle": "科学家重新定义肥胖，你一直在用的"金指标"要变了",
                 "enTitle": "Scientists Redefine Obesity: The 'Golden Standard' BMI Faces Overhaul",
-                "zhAbstract": "长期被视为衡量肥胖“金标准”的BMI（身体质量指数）正面临前所未有的挑战...",
+                "zhAbstract": "长期被视为衡量肥胖"金标准"的BMI（身体质量指数）正面临前所未有的挑战...",
                 "enAbstract": "BMI (Body Mass Index), long considered the 'gold standard' for measuring obesity, is facing unprecedented challenges...",
                 "link": "https://www.kepuchina.cn/article/articleinfo?business_type=100&classify=0&ar_id=579418",
                 "hasAbstract": true,
@@ -472,7 +463,7 @@
                 "media": "科普中国"
             },
             {
-                "zhTitle": "7岁血癌女孩绝境逢生，这项疗法为何成为“最后希望”？",
+                "zhTitle": "7岁血癌女孩绝境逢生，这项疗法为何成为"最后希望"？",
                 "enTitle": "7-Year-Old Leukemia Patient's Miraculous Recovery: Why CAR-T Therapy is the Last Hope",
                 "zhAbstract": "Emily Whitehead的抗癌奇迹让CAR-T疗法走进了大众视野...",
                 "enAbstract": "Emily Whitehead's miraculous recovery from cancer brought CAR-T therapy into the public eye...",
@@ -496,28 +487,16 @@
                 "media": "网易新闻"
             },
             {
-                "zhTitle": "继心肝肾后，猪肺也成功移植人体，异种器官移植还要走多远的路？",
-                "enTitle": "Pig Lung Successfully Transplanted into Human: The Future of Xenotransplantation",
-                "zhAbstract": "2025年8月，中国科研团队成功将基因编辑猪肺移植到一名脑死亡受体体内...",
-                "enAbstract": "In August 2025, a Chinese research team successfully transplanted a gene-edited pig lung into a brain-dead recipient...",
-                "link": "https://cloud.kepuchina.cn/newSearch/imgText?id=7370579367073513472",
+                "zhTitle": "3900万新病例？儿童肥胖正在改写一代中国人的健康轨迹",
+                "enTitle": "39 Million New Cases: Childhood Obesity Reshaping China's Health Landscape",
+                "zhAbstract": "中国正面临严峻的儿童肥胖危机。研究显示，肥胖病例快速上升且呈现"农村包围城市"趋势...",
+                "enAbstract": "China is facing a severe childhood obesity crisis. Research shows that obesity cases are rising rapidly...",
+                "link": "https://news.qq.com/rain/a/20250908A03NSY00",
                 "hasAbstract": true,
-                "zhTag": "生命科学",
-                "enTag": "Life Science",
-                "date": "2025-08-25",
-                "media": "科普中国"
-            },
-            {
-                "zhTitle": "90多岁的女儿仍健康，117岁老人捐出自己的长寿“密码”",
-                "enTitle": "117-Year-Old Supercentenarian Donates 'Longevity Secrets' to Science",
-                "zhAbstract": "全球最长寿老人Maria Branyas Morera以117岁高龄离世，她留下的生物样本为科学家解锁“健康衰老”提供了珍贵线索...",
-                "enAbstract": "Maria Branyas Morera, the world's oldest person, passed away at 117, leaving behind biological samples that provide precious clues...",
-                "link": "https://www.163.com/dy/article/KD1H58DC05327918.html",
-                "hasAbstract": true,
-                "zhTag": "生命科学",
-                "enTag": "Life Science",
-                "date": "2025-08-10",
-                "media": "网易"
+                "zhTag": "健康政策",
+                "enTag": "Health Policy",
+                "date": "2025-09-08",
+                "media": "腾讯新闻"
             },
             {
                 "zhTitle": "诺和诺德与亨利医药的跨境收购纠纷：临床不确定性的教训",
@@ -532,15 +511,111 @@
                 "media": "研发客"
             },
             {
-                "zhTitle": "3900万新病例？儿童肥胖正在改写一代中国人的健康轨迹",
-                "enTitle": "39 Million New Cases: Childhood Obesity Reshaping China's Health Landscape",
-                "zhAbstract": "中国正面临严峻的儿童肥胖危机。研究显示，肥胖病例快速上升且呈现“农村包围城市”趋势...",
-                "enAbstract": "China is facing a severe childhood obesity crisis. Research shows that obesity cases are rising rapidly...",
-                "link": "https://news.qq.com/rain/a/20250908A03NSY00",
+                "zhTitle": "给大脑补"锂"后，丢失的记忆力奇迹般恢复了",
+                "enTitle": "Memory Miraculously Restored After Lithium Supplementation",
+                "zhAbstract": "哈佛医学院研究揭示锂在阿尔茨海默病中关键作用。患者大脑锂缺乏激活有害分子开关，加速蛋白沉积。补充特殊锂可恢复记忆，为早期防治提供新方向。",
+                "enAbstract": "Research from Harvard Medical School reveals the key role of lithium in Alzheimer's disease. Lithium deficiency in patients' brains activates harmful molecular switches, accelerating protein deposition. Supplementing with special lithium can restore memory, providing a new direction for early prevention and treatment.",
+                "link": "https://news.qq.com/rain/a/20250829A04S5M00",
+                "hasAbstract": true,
+                "zhTag": "生命科学",
+                "enTag": "Life Science",
+                "date": "2025-08-29",
+                "media": "腾讯新闻"
+            },
+            {
+                "zhTitle": "继心肝肾后，猪肺也成功移植人体，异种器官移植还要走多远的路？",
+                "enTitle": "Pig Lung Successfully Transplanted into Human: The Future of Xenotransplantation",
+                "zhAbstract": "2025年8月，中国科研团队成功将基因编辑猪肺移植到一名脑死亡受体体内...",
+                "enAbstract": "In August 2025, a Chinese research team successfully transplanted a gene-edited pig lung into a brain-dead recipient...",
+                "link": "https://cloud.kepuchina.cn/newSearch/imgText?id=7370579367073513472",
+                "hasAbstract": true,
+                "zhTag": "生命科学",
+                "enTag": "Life Science",
+                "date": "2025-08-25",
+                "media": "科普中国"
+            },
+            {
+                "zhTitle": "跟着视频学了17个小时，它就能独立主刀做手术",
+                "enTitle": "After 17 Hours of Video Learning, It Can Perform Surgery Independently",
+                "zhAbstract": "AI机器人SRT-H通过观看手术视频17小时即可独立完成复杂操作。具备双层大脑，一层理解视觉场景，一层精准执行动作，标志手术机器人从辅助工具迈向自主执行体。",
+                "enAbstract": "The AI robot SRT-H can independently complete complex operations after watching surgical videos for 17 hours. Equipped with a dual-layer brain - one layer understands visual scenes and the other precisely executes movements - it marks the evolution of surgical robots from auxiliary tools to autonomous executors.",
+                "link": "https://news.qq.com/rain/a/20250811A02NSZ00",
+                "hasAbstract": true,
+                "zhTag": "医疗技术",
+                "enTag": "Medical Technology",
+                "date": "2025-08-11",
+                "media": "腾讯新闻"
+            },
+            {
+                "zhTitle": "90多岁的女儿仍健康，117岁老人捐出自己的长寿"密码"",
+                "enTitle": "117-Year-Old Supercentenarian Donates 'Longevity Secrets' to Science",
+                "zhAbstract": "全球最长寿老人Maria Branyas Morera以117岁高龄离世，她留下的生物样本为科学家解锁"健康衰老"提供了珍贵线索...",
+                "enAbstract": "Maria Branyas Morera, the world's oldest person, passed away at 117, leaving behind biological samples that provide precious clues...",
+                "link": "https://www.163.com/dy/article/KD1H58DC05327918.html",
+                "hasAbstract": true,
+                "zhTag": "生命科学",
+                "enTag": "Life Science",
+                "date": "2025-08-10",
+                "media": "网易"
+            },
+            {
+                "zhTitle": "人们宁愿养狗，也不生娃？背后的科学解释找到了",
+                "enTitle": "People Prefer Dogs to Babies? The Scientific Explanation Found",
+                "zhAbstract": "全球生育率下降，宠物狗成为许多家庭情感核心。研究显示狗与人类幼儿情感依恋相似，养狗提供易控、即时反馈的情感满足，形成新生活方式与宠物经济现象。",
+                "enAbstract": "With the global decline in fertility rates, pet dogs have become the emotional core of many families. Studies show that the emotional attachment between dogs and human infants is similar, and dog ownership provides controllable and immediate emotional satisfaction, forming a new lifestyle and pet economy phenomenon.",
+                "link": "https://news.qq.com/rain/a/20250609A03SF600",
+                "hasAbstract": true,
+                "zhTag": "生命科学",
+                "enTag": "Life Science",
+                "date": "2025-06-09",
+                "media": "腾讯新闻"
+            },
+            {
+                "zhTitle": "仅靠空腹抽血，不能良好评估代谢健康，中国科学家给出新方法",
+                "enTitle": "Fasting Blood Alone Cannot Assess Metabolic Health, Chinese Scientists Offer New Method",
+                "zhAbstract": "传统体检只关注空腹指标不足以评估代谢能力。双维度健康模型引入稳态适应评分，可动态评估餐后代谢变化，为个性化营养和早期疾病预防提供精准工具。",
+                "enAbstract": "Traditional physical examinations focusing only on fasting indicators are insufficient to assess metabolic capacity. The two-dimensional health model introduces a homeostatic adaptation score that can dynamically evaluate postprandial metabolic changes, providing a precise tool for personalized nutrition and early disease prevention.",
+                "link": "https://news.qq.com/rain/a/20250504A02XX800",
                 "hasAbstract": true,
                 "zhTag": "健康政策",
                 "enTag": "Health Policy",
-                "date": "2025-09-08",
+                "date": "2025-05-04",
+                "media": "腾讯新闻"
+            },
+            {
+                "zhTitle": "科学家从自家后院挖到"宝"，发了篇Nature",
+                "enTitle": "Scientists Found 'Treasure' in Backyard, Published in Nature",
+                "zhAbstract": "加拿大团队在自家土壤发现新抗生素Lariocidin，可精准打击耐药菌。尽管距离临床仍远，但为全球耐药性危机提供新曙光，提醒自然界仍是创新药物宝库。",
+                "enAbstract": "A Canadian team discovered a new antibiotic Lariocidin in their backyard soil that can precisely target drug-resistant bacteria. Although far from clinical application, it provides new hope for the global antimicrobial resistance crisis and reminds us that nature is still a treasure trove of innovative drugs.",
+                "link": "https://news.qq.com/rain/a/20250408A03BOP00",
+                "hasAbstract": true,
+                "zhTag": "生命科学",
+                "enTag": "Life Science",
+                "date": "2025-04-08",
+                "media": "腾讯新闻"
+            },
+            {
+                "zhTitle": "这种新药堪称"抗癌导弹"，它是如何改变癌症治疗的？",
+                "enTitle": "This New Drug Is a 'Cancer Missile': How It Changes Cancer Therapy",
+                "zhAbstract": "抗体偶联药物（ADC）实现精准打击肿瘤细胞，最大限度保护正常细胞。通过导航、保险与弹头三位一体结构，ADC瓦解顽固癌细胞并产生旁观者效应，引领癌症治疗新时代。",
+                "enAbstract": "Antibody-drug conjugates (ADCs) achieve precise targeting of tumor cells while maximizing protection of normal cells. Through a three-in-one structure of navigation, insurance and payload, ADCs break down stubborn cancer cells and produce a bystander effect, leading a new era in cancer treatment.",
+                "link": "https://news.qq.com/rain/a/20250401A09N9700",
+                "hasAbstract": true,
+                "zhTag": "生物医药",
+                "enTag": "Biomedicine",
+                "date": "2025-04-01",
+                "media": "腾讯新闻"
+            },
+            {
+                "zhTitle": "挑战40年权威理论，Science子刊：智慧生命诞生或是一种必然",
+                "enTitle": "Challenging 40-Year Authority Theory: Emergence of Intelligent Life May Be Inevitable",
+                "zhAbstract": "《科学进展》研究提出智慧生命演化可能受环境驱动必然出现。地球系统条件设定环境门槛，一旦成熟，生命顺着进化阶梯发展，为地外生命搜寻提供新视角。",
+                "enAbstract": "Research in Science Advances suggests that the evolution of intelligent life may be inevitably driven by the environment. Earth system conditions set environmental thresholds, and once mature, life develops along the evolutionary ladder, providing a new perspective for the search for extraterrestrial life.",
+                "link": "https://news.qq.com/rain/a/20250317A039IE00",
+                "hasAbstract": true,
+                "zhTag": "生命科学",
+                "enTag": "Life Science",
+                "date": "2025-03-17",
                 "media": "腾讯新闻"
             },
             {
@@ -558,7 +633,7 @@
             {
                 "zhTitle": "如何拯救食物过敏者的餐桌？",
                 "enTitle": "Revolutionizing the Dining Experience for Food Allergy Sufferers",
-                "zhAbstract": "全球食物过敏发病率上升，传统“被动回避”影响生活质量...",
+                "zhAbstract": "全球食物过敏发病率上升，传统"被动回避"影响生活质量...",
                 "enAbstract": "With the global incidence of food allergies rising, traditional 'passive avoidance' affects quality of life...",
                 "link": "https://iscientists.blog.caixin.com/archives/281745",
                 "hasAbstract": true,
@@ -580,9 +655,9 @@
                 "media": "科普中国"
             },
             {
-                "zhTitle": "钛合金：医疗领域的“万能金属”是如何炼成的？",
+                "zhTitle": "钛合金：医疗领域的"万能金属"是如何炼成的？",
                 "enTitle": "Titanium Alloy: The 'Universal Metal' Transforming Modern Medicine",
-                "zhAbstract": "钛合金因生物相容性、高强度与耐腐蚀性被誉为医疗“万能金属”...",
+                "zhAbstract": "钛合金因生物相容性、高强度与耐腐蚀性被誉为医疗"万能金属"...",
                 "enAbstract": "Titanium alloy is hailed as the 'universal metal' of medicine due to its biocompatibility, high strength, and corrosion resistance...",
                 "link": "https://cloud.kepuchina.cn/newSearch/imgText?id=7347674783378661376",
                 "hasAbstract": true,
@@ -602,94 +677,9 @@
                 "enTag": "Health Policy",
                 "date": "2024-10-30",
                 "media": "科普中国"
-            },
-            {
-                "zhTitle": "挑战40年权威理论，Science子刊：智慧生命诞生或是一种必然",
-                "enTitle": "Challenging 40-Year Authority Theory: Emergence of Intelligent Life May Be Inevitable",
-                "zhAbstract": "《科学进展》研究提出智慧生命演化可能受环境驱动必然出现。地球系统条件设定环境门槛，一旦成熟，生命顺着进化阶梯发展，为地外生命搜寻提供新视角。",
-                "enAbstract": "Research in Science Advances suggests that the evolution of intelligent life may be inevitably driven by the environment. Earth system conditions set environmental thresholds, and once mature, life develops along the evolutionary ladder, providing a new perspective for the search for extraterrestrial life.",
-                "link": "https://news.qq.com/rain/a/20250317A039IE00",
-                "hasAbstract": true,
-                "zhTag": "生命科学",
-                "enTag": "Life Science",
-                "date": "2025-03-17",
-                "media": "腾讯新闻"
-            },
-            {
-                "zhTitle": "这种新药堪称“抗癌导弹”，它是如何改变癌症治疗的？",
-                "enTitle": "This New Drug Is a 'Cancer Missile': How It Changes Cancer Therapy",
-                "zhAbstract": "抗体偶联药物（ADC）实现精准打击肿瘤细胞，最大限度保护正常细胞。通过导航、保险与弹头三位一体结构，ADC瓦解顽固癌细胞并产生旁观者效应，引领癌症治疗新时代。",
-                "enAbstract": "Antibody-drug conjugates (ADCs) achieve precise targeting of tumor cells while maximizing protection of normal cells. Through a three-in-one structure of navigation, insurance and payload, ADCs break down stubborn cancer cells and produce a bystander effect, leading a new era in cancer treatment.",
-                "link": "https://news.qq.com/rain/a/20250401A09N9700",
-                "hasAbstract": true,
-                "zhTag": "生物医药",
-                "enTag": "Biomedicine",
-                "date": "2025-04-01",
-                "media": "腾讯新闻"
-            },
-            {
-                "zhTitle": "科学家从自家后院挖到“宝”，发了篇Nature",
-                "enTitle": "Scientists Found 'Treasure' in Backyard, Published in Nature",
-                "zhAbstract": "加拿大团队在自家土壤发现新抗生素Lariocidin，可精准打击耐药菌。尽管距离临床仍远，但为全球耐药性危机提供新曙光，提醒自然界仍是创新药物宝库。",
-                "enAbstract": "A Canadian team discovered a new antibiotic Lariocidin in their backyard soil that can precisely target drug-resistant bacteria. Although far from clinical application, it provides new hope for the global antimicrobial resistance crisis and reminds us that nature is still a treasure trove of innovative drugs.",
-                "link": "https://news.qq.com/rain/a/20250408A03BOP00",
-                "hasAbstract": true,
-                "zhTag": "生命科学",
-                "enTag": "Life Science",
-                "date": "2025-04-08",
-                "media": "腾讯新闻"
-            },
-            {
-                "zhTitle": "仅靠空腹抽血，不能良好评估代谢健康，中国科学家给出新方法",
-                "enTitle": "Fasting Blood Alone Cannot Assess Metabolic Health, Chinese Scientists Offer New Method",
-                "zhAbstract": "传统体检只关注空腹指标不足以评估代谢能力。双维度健康模型引入稳态适应评分，可动态评估餐后代谢变化，为个性化营养和早期疾病预防提供精准工具。",
-                "enAbstract": "Traditional physical examinations focusing only on fasting indicators are insufficient to assess metabolic capacity. The two-dimensional health model introduces a homeostatic adaptation score that can dynamically evaluate postprandial metabolic changes, providing a precise tool for personalized nutrition and early disease prevention.",
-                "link": "https://news.qq.com/rain/a/20250504A02XX800",
-                "hasAbstract": true,
-                "zhTag": "健康政策",
-                "enTag": "Health Policy",
-                "date": "2025-05-04",
-                "media": "腾讯新闻"
-            },
-            {
-                "zhTitle": "人们宁愿养狗，也不生娃？背后的科学解释找到了",
-                "enTitle": "People Prefer Dogs to Babies? The Scientific Explanation Found",
-                "zhAbstract": "全球生育率下降，宠物狗成为许多家庭情感核心。研究显示狗与人类幼儿情感依恋相似，养狗提供易控、即时反馈的情感满足，形成新生活方式与宠物经济现象。",
-                "enAbstract": "With the global decline in fertility rates, pet dogs have become the emotional core of many families. Studies show that the emotional attachment between dogs and human infants is similar, and dog ownership provides controllable and immediate emotional satisfaction, forming a new lifestyle and pet economy phenomenon.",
-                "link": "https://news.qq.com/rain/a/20250609A03SF600",
-                "hasAbstract": true,
-                "zhTag": "生命科学",
-                "enTag": "Life Science",
-                "date": "2025-06-09",
-                "media": "腾讯新闻"
-            },
-            {
-                "zhTitle": "跟着视频学了17个小时，它就能独立主刀做手术",
-                "enTitle": "After 17 Hours of Video Learning, It Can Perform Surgery Independently",
-                "zhAbstract": "AI机器人SRT-H通过观看手术视频17小时即可独立完成复杂操作。具备双层大脑，一层理解视觉场景，一层精准执行动作，标志手术机器人从辅助工具迈向自主执行体。",
-                "enAbstract": "The AI robot SRT-H can independently complete complex operations after watching surgical videos for 17 hours. Equipped with a dual-layer brain - one layer understands visual scenes and the other precisely executes movements - it marks the evolution of surgical robots from auxiliary tools to autonomous executors.",
-                "link": "https://news.qq.com/rain/a/20250811A02NSZ00",
-                "hasAbstract": true,
-                "zhTag": "医疗技术",
-                "enTag": "Medical Technology",
-                "date": "2025-08-11",
-                "media": "腾讯新闻"
-            },
-            {
-                "zhTitle": "给大脑补“锂”后，丢失的记忆力奇迹般恢复了",
-                "enTitle": "Memory Miraculously Restored After Lithium Supplementation",
-                "zhAbstract": "哈佛医学院研究揭示锂在阿尔茨海默病中关键作用。患者大脑锂缺乏激活有害分子开关，加速蛋白沉积。补充特殊锂可恢复记忆，为早期防治提供新方向。",
-                "enAbstract": "Research from Harvard Medical School reveals the key role of lithium in Alzheimer's disease. Lithium deficiency in patients' brains activates harmful molecular switches, accelerating protein deposition. Supplementing with special lithium can restore memory, providing a new direction for early prevention and treatment.",
-                "link": "https://news.qq.com/rain/a/20250829A04S5M00",
-                "hasAbstract": true,
-                "zhTag": "生命科学",
-                "enTag": "Life Science",
-                "date": "2025-08-29",
-                "media": "腾讯新闻"
             }
         ];
 
-        // 更多作品数据
         const additionalWorksData = [
             { "zhTitle": "含麝香的产品可能导致青春期提前，我们该怎么选洗化用品？", "enTitle": "Musky Products Linked to Early Puberty: How to Choose Safe Personal Care Items", "source": "《中国科普博览》，2024-10-21", "zhTag": "健康政策", "enTag": "Health Policy", "media": "中国科普博览" },
             { "zhTitle": "2022年市场多变，下一个投资风口在哪？原来多家知名机构已提前布局慢性肾病市场", "enTitle": "2022 Investment Trends: Chronic Kidney Disease Emerges as a Key Opportunity", "source": "《药时代》，2022-03-23", "zhTag": "生物医药", "enTag": "Biomedicine", "media": "药时代" },
@@ -724,16 +714,15 @@
             { "zhTitle": "贪杯影响预期寿命，合适的饮酒量是多少？", "enTitle": "Alcohol Consumption and Life Expectancy: What's the Safe Limit?", "source": "《知社学术圈》，2018-04-13", "zhTag": "健康政策", "enTag": "Health Policy", "media": "知社学术圈" },
             { "zhTitle": "中国学者揭示衰老的遗传基础和雄风长驻之秘密", "enTitle": "Chinese Researchers Uncover Genetic Basis of Aging and Longevity", "source": "《知社学术圈》，2017-11-09", "zhTag": "生命科学", "enTag": "Life Science", "media": "知社学术圈" },
             { "zhTitle": "多吃蔬果无益，高脂膳食更健康？两篇《柳叶刀》论文遭多位权威学者批评", "enTitle": "Controversial Lancet Studies on Diet Criticized by Leading Scientists", "source": "《知识分子》，2017-09-05", "zhTag": "健康政策", "enTag": "Health Policy", "media": "知识分子" },
-            { "zhTitle": "不要打扰睡着的婴儿，他们正在“学习”", "enTitle": "Don't Disturb Sleeping Babies - They're Actively Learning", "source": "《知识分子》，2017-08-30", "zhTag": "生命科学", "enTag": "Life Science", "media": "知识分子" },
-            { "zhTitle": "RNA好累：可编码的“非编码RNA”", "enTitle": "The Surprising Role of 'Non-Coding' RNA in Gene Expression", "source": "《赛先生》，2016-11-01", "zhTag": "生命科学", "enTag": "Life Science", "media": "赛先生" },
-            { "zhTitle": "“学问是老婆的好，老婆是自己的好”——专访浙江大学王志萍、郭行夫妇 | 科研伉俪", "enTitle": "Research Partners: Interview with Zhejiang University's Wang Zhiping and Guo Hang", "source": "《赛先生》，2016-08-06", "zhTag": "生命科学", "enTag": "Life Science", "media": "赛先生", "isInterview": true },
+            { "zhTitle": "不要打扰睡着的婴儿，他们正在"学习"", "enTitle": "Don't Disturb Sleeping Babies - They're Actively Learning", "source": "《知识分子》，2017-08-30", "zhTag": "生命科学", "enTag": "Life Science", "media": "知识分子" },
+            { "zhTitle": "RNA好累：可编码的"非编码RNA"", "enTitle": "The Surprising Role of 'Non-Coding' RNA in Gene Expression", "source": "《赛先生》，2016-11-01", "zhTag": "生命科学", "enTag": "Life Science", "media": "赛先生" },
+            { "zhTitle": ""学问是老婆的好，老婆是自己的好"——专访浙江大学王志萍、郭行夫妇 | 科研伉俪", "enTitle": "Research Partners: Interview with Zhejiang University's Wang Zhiping and Guo Hang", "source": "《赛先生》，2016-08-06", "zhTag": "生命科学", "enTag": "Life Science", "media": "赛先生", "isInterview": true },
             { "zhTitle": "独家专访Cell Research常务副主编李党生：从事科学编辑是无比正确的决定", "enTitle": "Exclusive Interview: Li Dangsheng on a Career in Scientific Editing", "source": "《赛先生》，2016-08-05", "zhTag": "生命科学", "enTag": "Life Science", "media": "赛先生", "isInterview": true },
             { "zhTitle": "到底哪一类脂肪对你有害？", "enTitle": "Which Fats Are Truly Harmful to Your Health?", "source": "《赛先生》，2016-07-22", "zhTag": "健康政策", "enTag": "Health Policy", "media": "赛先生" },
             { "zhTitle": "大数据告诉你哪些基因参与Ⅱ型糖尿病的遗传", "enTitle": "Big Data Identifies Genes Linked to Type 2 Diabetes", "source": "《赛先生》，2016-07-21", "zhTag": "生命科学", "enTag": "Life Science", "media": "赛先生" },
             { "zhTitle": "打造一部冲向癌细胞的战车：肿瘤免疫疗法之CAR-T细胞疗法", "enTitle": "CAR-T Therapy: Building a 'Chariot' to Attack Cancer Cells", "source": "《赛先生》，2016-03-11", "zhTag": "医疗技术", "enTag": "Medical Technology", "media": "赛先生" }
         ];
 
-        // 作者介绍数据
         const aboutData = {
             "zh": {
                 "title": "作者介绍",
@@ -761,15 +750,12 @@
 
         let currentLang = 'zh';
 
-        // 语言切换函数
         function toggleLanguage() {
             currentLang = currentLang === 'zh' ? 'en' : 'zh';
             renderPage();
         }
 
-        // 渲染整个页面
         function renderPage() {
-            // 更新静态文本
             document.getElementById('page-title').innerText = currentLang === 'zh' ? '李娟博士科学传播作品集' : 'Dr. Juan Li\'s Science Portfolio';
             document.getElementById('page-subtitle').innerText = currentLang === 'zh' ? '专注生物医学和健康政策前沿' : 'Focusing on Biomedical Frontiers & Health Policy';
             document.getElementById('langBtn').innerText = currentLang === 'zh' ? 'English Version' : '中文版';
@@ -777,29 +763,18 @@
             document.getElementById('additional-works-title').innerText = currentLang === 'zh' ? '更多作品' : 'More Works';
             document.getElementById('footer-text').innerHTML = currentLang === 'zh' ? '&copy; 2026 Juan Li 博士 / All Rights Reserved' : '&copy; 2026 Dr. Juan Li / All Rights Reserved';
 
-            // 更新作者简介和合作媒体侧边栏
             renderAuthorSidebar();
-            
-            // 更新标签分类
             renderCategoryTags();
-            
-            // 渲染完整文章列表
             renderFullArticlesList();
-            
-            // 渲染更多作品列表
             renderAdditionalWorks();
             
-            // 更新完整介绍页面
             const about = aboutData[currentLang];
             document.getElementById('full-about-title').innerText = currentLang === 'zh' ? '作者简介（完整）' : 'About the Author (Full)';
             document.getElementById('full-about-content').innerHTML = about.full;
         }
 
-        // 渲染作者侧边栏（包含合作媒体）
         function renderAuthorSidebar() {
             const about = aboutData[currentLang];
-            
-            // 获取所有媒体平台
             const allMedia = [...new Set([
                 ...articlesData.map(a => a.media),
                 ...additionalWorksData.map(w => w.media)
@@ -810,7 +785,6 @@
                 <p>${about.intro}</p>
                 <a href="javascript:void(0)" class="more-about-btn" onclick="showAboutFull()">${currentLang === 'zh' ? '详细介绍' : 'Detailed Introduction'}</a>
                 
-                <!-- 侧边栏：合作媒体 -->
                 <div class="sidebar-tags">
                     <h3>${currentLang === 'zh' ? '合作媒体' : 'Media Partners'}</h3>
                     ${allMedia.map(media => `<span class="sidebar-tag" onclick="showMedia('${media}')">${media}</span>`).join('')}
@@ -818,17 +792,14 @@
             `;
         }
 
-        // 渲染分类标签
         function renderCategoryTags() {
             const tagsContainer = document.getElementById('tags-container');
             tagsContainer.innerHTML = '';
             
-            // 获取所有分类标签
             const mainTags = articlesData.map(a => currentLang === 'zh' ? a.zhTag : a.enTag);
             const additionalTags = additionalWorksData.map(w => currentLang === 'zh' ? w.zhTag : w.enTag);
             let allTags = [...new Set([...mainTags, ...additionalTags])];
             
-            // 添加“人物采访”标签
             const interviewTag = currentLang === 'zh' ? '人物采访' : 'Interviews';
             if (!allTags.includes(interviewTag)) {
                 allTags.push(interviewTag);
@@ -843,7 +814,6 @@
             });
         }
 
-        // 渲染完整文章列表
         function renderFullArticlesList() {
             const container = document.getElementById('full-articles-container');
             container.innerHTML = '';
@@ -854,7 +824,6 @@
                 const card = document.createElement('div');
                 card.className = 'article-card';
                 
-                // 检查是否属于人物采访
                 const isInterview = article.isInterview || false;
                 const interviewTag = currentLang === 'zh' ? '人物采访' : 'Interviews';
                 const mainTag = currentLang === 'zh' ? article.zhTag : article.enTag;
@@ -871,7 +840,6 @@
             });
         }
 
-        // 渲染更多作品列表
         function renderAdditionalWorks() {
             const listContainer = document.getElementById('additional-works-list');
             listContainer.innerHTML = '';
@@ -886,7 +854,6 @@
             });
         }
 
-        // 显示分类页面
         function showCategory(tag) {
             document.getElementById('main-page').style.display = 'none';
             document.getElementById('about-full-page').style.display = 'none';
@@ -940,7 +907,6 @@
             window.scrollTo(0, 0);
         }
 
-        // 显示媒体平台文章
         function showMedia(mediaName) {
             document.getElementById('main-page').style.display = 'none';
             document.getElementById('about-full-page').style.display = 'none';
@@ -984,7 +950,6 @@
             window.scrollTo(0, 0);
         }
 
-        // 显示完整介绍页面
         function showAboutFull() {
             document.getElementById('main-page').style.display = 'none';
             document.getElementById('category-page').style.display = 'none';
@@ -992,7 +957,6 @@
             window.scrollTo(0, 0);
         }
 
-        // 返回主页面
         function showMainPage() {
             document.getElementById('category-page').style.display = 'none';
             document.getElementById('about-full-page').style.display = 'none';
@@ -1000,7 +964,6 @@
             window.scrollTo(0, 0);
         }
 
-        // 初始化页面
         renderPage();
     </script>
 </body>
